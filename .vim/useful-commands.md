@@ -15,9 +15,20 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `:e` edit file (then enter file address)
 * `u` undo
 * `<Ctrl-R>` redo
-* `.` repeat last changes
-* `:vs` vertical split (then enter file address)
-* `:hs` horizontal split (then enter file address)
+* `.` repeat last change
+* `h j k l` move cursor ( h: ←  j: ↓  k: ↑  l: → )
+* `A` append at end of line
+* `o` insert at new line below
+* `x` delete character under cursor
+* `dw` delete everything right from the cursor to the start of next word (and put it into the default register)
+* `dd` delete line (and put it into the default register)
+* `y` yank (copy)
+* `Y` yank until the end of the line (custom)
+* `p` paste
+* `r` replace character
+* `ce` change word
+* `/word` searches for _word_
+* `:%s/old/new/g` replace all occurrences of _old_ with _new_ (add `w` for confirmation) 
 
 ## LaTeX
 
@@ -41,7 +52,13 @@ Here is a list of commands that I regularly use. Some of them are customised.
 
 ## Windows
 
-* `<Ctrl-W> <` increase width (type can any number you prefer first)
-* `<Ctrl-W> >` decrease width
-* `<Ctrl-W> <Ctrl-R>` switch windows
+* `<Ctrl-w> <` increase width (type can any number you prefer first)
+* `<Ctrl-w> >` decrease width
+* `<Ctrl-w> <Ctrl-R>` switch windows
+* `<Ctrl-w> w` move cursor to another window
+* `<Ctrl-w> S` horizontal splitting
+* `:sp` horizontal splitting
+* `<Ctrl-w> v` vertical splitting
+* `:vs` vertical split
+* `<Ctrl-w> Q` close window
 
