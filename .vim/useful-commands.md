@@ -29,7 +29,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `ce` change word
 * `/word` searches for _word_
 * `:%s/old/new/g` replace all occurrences of _old_ with _new_ (add `w` for confirmation) 
-* `:setl noai nocin nosi inde=` remove indentation from current file
+* `<F6>` remove indentation from current file (custom)
 
 ## LaTeX
 
