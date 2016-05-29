@@ -65,10 +65,10 @@ let g:UltiSnipsEditSplit="vertical"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-"filetype plugin indent on   " required
+filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+" filetype plugin on
 
 " Brief help
 " :PluginList       - lists configured plugins
@@ -122,8 +122,10 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 
 " Shortcuts - Conque
-map <C-r> :ConqueTermVSplit R <CR>
-map <C-r> <C-h> :ConqueTermSplit R <CR>
+map <F6> :ConqueTermVSplit R <CR>
+map <C-F6> :ConqueTermSplit R <CR>
+map <F7> :ConqueTermSplit python <CR>
+map <C-F7> :ConqueTermVSplit python <CR>
 map <F2> :ConqueTermSplit bash <CR>
 
 " Add colours to terminal
@@ -138,6 +140,9 @@ let g:tex_flavor='latex'
 " Enable NERDTree on startup
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Remove indentation from a file
+map <F3> :setl noai nocin nosi inde= <CR>
 
 " Close every window and save
 nmap <silent> <leader>w :wqall <CR>
