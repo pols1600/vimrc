@@ -29,6 +29,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `ce` change word
 * `/word` searches for _word_
 * `:%s/old/new/g` replace all occurrences of _old_ with _new_ (add `w` for confirmation) 
+* `:setl noai nocin nosi inde=` remove indentation from current file
 
 ## LaTeX
 
@@ -56,6 +57,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-w> >` decrease width
 * `<Ctrl-w> <Ctrl-R>` switch windows
 * `<Ctrl-w> w` move cursor to another window
+* `<Ctrl-w> h j k l` move window ( h: ←  j: ↓  k: ↑  l: → )
 * `<Ctrl-w> S` horizontal splitting
 * `:sp` horizontal splitting
 * `<Ctrl-w> v` vertical splitting
