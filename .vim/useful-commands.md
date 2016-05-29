@@ -29,12 +29,12 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `ce` change word
 * `/word` searches for _word_
 * `:%s/old/new/g` replace all occurrences of _old_ with _new_ (add `w` for confirmation) 
-* `<F6>` remove indentation from current file (custom)
+* `<F3>` remove indentation from current file (custom)
 
 ## LaTeX
 
 * `<Shift-b>` build a pdf with latexmk (custom)
-* `<Ctrl-x><Ctrl-e>` and `<Ctrl-x><Ctrl-y>` scroll
+* `<Ctrl-e>` and `<Ctrl-y>` scroll
 * `item-tab`, `fig-tab`, `enum-tab` and many other snippets
 
 ## Spellcheck 
@@ -43,8 +43,10 @@ Here is a list of commands that I regularly use. Some of them are customised.
 
 ## R
 
-* `<Ctrl-R>` open a new R terminal (custom)
-* `<Ctrl-R><Ctrl-h>` open a new horizontal R terminal (custom)
+* `<F6>` open a new vertical R terminal (custom)
+* `<Ctrl-F6>` open a new horizontal R terminal (custom)
+* `<F7>` open a new horizontal python terminal (custom)
+* `<Ctrl-F7>` open a new horizontal python terminal (custom)
 * `<F9>` send selected code to R (custom)
 
 ## Bash
@@ -57,7 +59,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-w> >` decrease width
 * `<Ctrl-w> <Ctrl-R>` switch windows
 * `<Ctrl-w> w` move cursor to another window
-* `<Ctrl-w> h j k l` move window ( h: ←  j: ↓  k: ↑  l: → )
+* `<Ctrl-w> H J K L` move window ( H: ←  J: ↓  K: ↑  L: → )
 * `<Ctrl-w> S` horizontal splitting
 * `:sp` horizontal splitting
 * `<Ctrl-w> v` vertical splitting
