@@ -31,8 +31,16 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `:%s/old/new/g` replace all occurrences of _old_ with _new_ (add `w` for confirmation) 
 * `<F3>` remove indentation from current file (custom)
 * `yyp` duplicate line
-* `fa` jumps to the next _a_ in line (use with any letter)
-* `ta` places the cursos in the character that comes before _a_
+* `fa` jump to the next _a_ in line (use with any letter)
+* `ta` place the cursor in the character that comes before _a_
+* `:tabedit` open text in a new tab
+* `<Ctrl-w> T` send current window to a new tab
+* `gt` move to next tab
+* `gT` move to previous tab
+* `#gt` move to tab number #
+* `:tabmove` move tab to the end
+* `:tabmove 0` move tab to the beginning
+* `:tabmove 1` move current tab to become the 2nd tab
 
 ## LaTeX
 
