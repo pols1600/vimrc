@@ -104,7 +104,6 @@ set softtabstop=4               " Number of spaces per Tab
 set linebreak                   " Break lines
 set undolevels=1000             " Number of undo levels
 set nofoldenable                " Disable folding 
-set expandtab ts=2 sw=2 ai      " Indent
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
@@ -157,6 +156,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Remove indentation from a file
 map <F3> :setl noai nocin nosi inde= <CR>
+
+" Remove all indentation
+filetype indent off
 
 " Close every window and save
 nmap <silent> <leader>w :wqall <CR>

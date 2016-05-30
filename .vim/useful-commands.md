@@ -30,6 +30,9 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `/word` searches for _word_
 * `:%s/old/new/g` replace all occurrences of _old_ with _new_ (add `w` for confirmation) 
 * `<F3>` remove indentation from current file (custom)
+* `yyp` duplicate line
+* `fa` jumps to the next _a_ in line (use with any letter)
+* `ta` places the cursos in the character that comes before _a_
 
 ## LaTeX
 
@@ -39,7 +42,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 
 ## Pandoc
 
-* `:Pandoc --ascii` display diacritics correctly in html output
+* `:Pandoc --ascii` display diacritics in html output
 
 ## Spellcheck 
 
@@ -67,6 +70,6 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-w> S` horizontal splitting
 * `:sp` horizontal splitting
 * `<Ctrl-w> v` vertical splitting
-* `:vs` vertical split
+* `:vs` vertical splitting
 * `<Ctrl-w> Q` close window
 
