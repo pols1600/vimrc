@@ -37,6 +37,10 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-e>` and `<Ctrl-y>` scroll
 * `item-tab`, `fig-tab`, `enum-tab` and many other snippets
 
+## Pandoc
+
+* `:Pandoc --ascii` display diacritics correctly in html output
+
 ## Spellcheck 
 
 * `z=` in normal mode (click over the word first)

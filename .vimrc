@@ -31,9 +31,16 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 " LaTeX
 Plugin 'lervag/vimtex' 
 
+" Pandoc
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax' 
+
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+
+" RMarkdown
+Plugin 'vim-pandoc/vim-rmarkdown'
 
 " Brazilian Portuguese spelling
 Plugin 'mateusbraga/vim-spell-pt-br'
@@ -136,6 +143,13 @@ map <S-b> :VimtexCompile <CR>
 
 " Set filetype of files with extension .tex to tex
 let g:tex_flavor='latex'
+
+" Enable pandoc functionality for markdown files 
+let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+let g:pandoc#filetypes#pandoc_markdown = 0
+
+" Disable pandoc folding
+let g:pandoc#modules#disabled = ["folding"]
 
 " Enable NERDTree on startup
 autocmd StdinReadPre * let s:std_in=1
