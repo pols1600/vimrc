@@ -31,7 +31,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `/word` searches for _word_
 * `:%s/old/new/g` replace all occurrences of _old_ with _new_ (add `w` for confirmation) 
 * `:noh` turn off search highlighting 
-* `<Enter>` clear search highlighting (custom, use it in normal mode)
+* `<F4>` clear search highlighting (custom, use it in normal mode)
 * `<F3>` remove indentation from current file (custom)
 * `yyp` duplicate line
 * `fa` jump to the next _a_ in line (use with any letter)

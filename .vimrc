@@ -151,7 +151,7 @@ map <F3> :setl noai nocin nosi inde= <CR>
 filetype indent off
 
 " Clear highlighting by pressing Enter (Return) in normal modemap
-remap <CR> :noh<CR><CR>
+map <silent>  <F4> :noh <CR>
 
 " Close every window and save
 nmap <silent> <leader>w :wqall <CR>
