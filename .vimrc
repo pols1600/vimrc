@@ -153,6 +153,9 @@ filetype indent off
 " Clear highlighting by pressing Enter (Return) in normal modemap
 map <silent>  <F4> :noh <CR>
 
+" Yank all text
+map <C-a> :%y+ <CR>
+
 " Close every window and save
 nmap <silent> <leader>w :wqall <CR>
 nmap <silent> <leader>q :qa! <CR>

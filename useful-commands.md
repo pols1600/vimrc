@@ -25,7 +25,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `y` yank (copy)
 * `Y` yank until the end of the line (custom)
 * `p` paste
-* `:%y+` yank all text
+* `<Ctrl-a>` yank all text (custom)
 * `r` replace character
 * `ce` change word
 * `/word` searches for _word_
