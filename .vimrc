@@ -150,6 +150,9 @@ map <F3> :setl noai nocin nosi inde= <CR>
 " Remove all indentation
 filetype indent off
 
+" Clear highlighting by pressing Enter (Return) in normal modemap
+remap <CR> :noh<CR><CR>
+
 " Close every window and save
 nmap <silent> <leader>w :wqall <CR>
 nmap <silent> <leader>q :qa! <CR>
