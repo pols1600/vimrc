@@ -11,7 +11,6 @@ call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
 " GitHub 
