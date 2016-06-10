@@ -38,7 +38,6 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `fa` jump to the next _a_ in line (use with any letter)
 * `ta` place the cursor in the character that comes before _a_
 * `:tabedit` open text in a new tab
-* `<Ctrl-w> T` send current window to a new tab
 * `gt` move to next tab
 * `gT` move to previous tab
 * `#gt` move to tab number #
@@ -60,6 +59,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 ## Spellcheck 
 
 * `z=` in normal mode (click over the word first)
+* `zG` add new word to dictionary
 
 ## R
 
@@ -78,6 +78,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-w> <` increase width (type can any number you prefer first)
 * `<Ctrl-w> >` decrease width
 * `<Ctrl-w> <Ctrl-R>` switch windows
+* `<Ctrl-w> T` send current window to a new tab
 * `<Ctrl-w> w` move cursor to another window
 * `<Ctrl-w> H J K L` move window ( H: ←  J: ↓  K: ↑  L: → )
 * `<Ctrl-w> S` horizontal splitting
