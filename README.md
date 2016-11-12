@@ -14,8 +14,8 @@ My configuration files and plugins for [Vim](http://en.wikipedia.org/wiki/Vim_(t
 
 ```
 $ git clone https://github.com/danilofreire/vimdir
-$ mv .vimrc /home/user
-$ mv .vim/ /home/user
+$ cd vimdir/
+$ mv .vimrc /home/username/
 ```
 
 * Open `.vimrc` and type `:PluginInstall`. From the command line:
