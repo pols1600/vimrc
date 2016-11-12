@@ -4,11 +4,19 @@ My configuration files and plugins for [Vim](http://en.wikipedia.org/wiki/Vim_(t
 
 ## Set up instructions:
 
-* Install [vim](http://www.vim.org/download.php):
+* Install [vim](http://www.vim.org/download.php).
 
-* Download this repository:
+* Download [Vundle](https://github.com/VundleVim/Vundle.vim):
 
-`$ git clone https://github.com/danilofreire/vimdir`
+`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+
+* Download this repository and copy the contents to your home folder
+
+```
+$ git clone https://github.com/danilofreire/vimdir
+$ mv .vimrc /home/user
+$ mv .vim/ /home/user
+```
 
 * Open `.vimrc` and type `:PluginInstall`. From the command line:
 
