@@ -49,8 +49,8 @@ Here is a list of commands that I regularly use. Some of them are customised.
 
 * `<Shift-b>` build a pdf with latexmk (custom)
 * `<Ctrl-e>` and `<Ctrl-y>` scroll
-* `item-tab`, `fig-tab`, `enum-tab` and many other snippets
-* `<Ctrl-n>` autocomplete BibTeX entry (type the first letter of the reference within `\cite{}`, then `<Ctrl-n>`)
+* `itemize-tab` (itemize), `fig-tab` (figure), `enum-tab` (enumerate), `it-tab` (italics), `bf-tab` (boldface), 
+* `<Ctrl-x><Ctrl-n>` autocomplete BibTeX entry (type the first letter of the reference within `\cite{}`, then `<Ctrl-x><Ctrl-n>`)
 * `<Ctrl-x><Ctrl-o>` opens a list of BibTeX entries within `\cite{}`
 
 ## Pandoc
