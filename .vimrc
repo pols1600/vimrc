@@ -33,6 +33,9 @@ Plugin 'lervag/vimtex'
 " Neotex
 Plugin 'donRaphaco/neotex'
 "
+" NERDTree
+Plugin 'scrooloose/nerdtree'
+"
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
@@ -44,23 +47,20 @@ Plugin 'plasticboy/vim-markdown'
 " RMarkdown
 Plugin 'vim-pandoc/vim-rmarkdown'
 "
-" Brazilian Portuguese spelling
-Plugin 'mateusbraga/vim-spell-pt-br'
-"
-" Conque-Shell
-Plugin 'lrvick/Conque-Shell'
-"
-" NERDTree
-Plugin 'scrooloose/nerdtree'
-"
-" Surround
-Plugin 'tpope/vim-surround'
+" Vim Slime
+Plugin 'jpalardy/vim-slime'
 "
 " Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+"
+" Spelling -- Brazilian Portuguese
+Plugin 'mateusbraga/vim-spell-pt-br'
+"
+" Surround
+Plugin 'tpope/vim-surround'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -97,8 +97,7 @@ set undolevels=1000             " Number of undo levels
 set nofoldenable                " Disable folding 
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
-set confirm                     " Y-N-C prompt if closing with unsaved
-" changes
+set confirm                     " Y-N-C prompt if closing with unsaved changes
 "
 " Molokai
 syntax enable
@@ -119,18 +118,14 @@ nnoremap <leader>Y "+y$
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 "
-" Shortcuts - Conque
-map <F6> :ConqueTermVSplit R <CR>
-map <C-F6> :ConqueTermSplit R <CR>
-map <F7> :ConqueTermSplit python <CR>
-map <C-F7> :ConqueTermVSplit python <CR>
-map <F2> :ConqueTermSplit bash <CR>
-"
 " Add colours to terminal
 let g:ConqueTerm_Color = 2
 "
 " Shortcuts - Vimtex
 map <S-b> :VimtexCompile <CR>
+" 
+" Vim-Slime: set up Vim Terminal
+let g:slime_target = "vimterminal"
 "
 " Set filetype of files with extension .tex to tex
 let g:tex_flavor='latex'
