@@ -22,6 +22,6 @@ $ mv .vimrc /home/username/
 
 `$ vim .vimrc +PluginInstall +qall`
 
-* Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `/usr/share/vim/vim74/colors`
+* Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.vim/colors`
 
 * Enjoy it! :)
