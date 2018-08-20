@@ -17,11 +17,27 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-R>` redo
 * `.` repeat last change
 * `h j k l` move cursor ( h: ←  j: ↓  k: ↑  l: → )
+* `0` go to beginning of the line
+* `$` go to the end of the line
 * `A` append at end of line
 * `o` insert at new line below
 * `x` delete character under cursor
 * `dw` delete everything right from the cursor to the start of next word (and put it into the default register)
 * `dd` delete line (and put it into the default register)
+* `G` go to last line
+* `100gg`go to the 100th line
+* `gg` go to the first line
+* `ˆ` jump to the first non-blank character of the line
+* `%` move to matching character (default supported pairs: '()', '{}', '[]' - use :h matchpairs in vim for more info)
+* `˜` swtich case
+* `/pattern` search for pattern
+* `?pattern` search backward for pattern
+* `n` repeat seach
+* `:%s/old/new/gc` replace all old with new throughout file with confirmations
+* `:noh` remove highlighting of search matches
+* `r` replace a single character
+* `J` join line below to the current one with one space in between
+* `gJ` join line below to the current one without space in between
 * `y` yank (copy)
 * `Y` yank until the end of the line (custom)
 * `p` paste
@@ -52,6 +68,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `itemize-tab` (itemize), `fig-tab` (figure), `enum-tab` (enumerate), `it-tab` (italics), `bf-tab` (boldface), 
 * `<Ctrl-x><Ctrl-n>` autocomplete BibTeX entry (type the first letter of the reference within `\cite{}`, then `<Ctrl-x><Ctrl-n>`)
 * `<Ctrl-x><Ctrl-o>` opens a list of BibTeX entries within `\cite{}`
+* `:NeoTexOn` turn live pdf preview on
 
 ## Pandoc
 
@@ -64,15 +81,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 
 ## R
 
-* `<F6>` open a new vertical R terminal (custom)
-* `<Ctrl-F6>` open a new horizontal R terminal (custom)
-* `<F7>` open a new horizontal python terminal (custom)
-* `<Ctrl-F7>` open a new horizontal python terminal (custom)
-* `<F9>` send selected code to R (custom)
-
-## Bash
-
-* `<F2>` open a terminal (custom)
+* `<Ctrl-c><Ctrl-c>` send code to R via `vim-slime`
 
 ## Windows
 
