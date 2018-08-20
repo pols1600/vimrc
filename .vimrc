@@ -33,8 +33,11 @@ Plugin 'lervag/vimtex'
 " Neotex
 Plugin 'donRaphaco/neotex'
 "
+" Ncm-R
+Plugin 'gaalcaras/ncm-R'
+"
 " NERDTree
-Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree' 
 "
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
