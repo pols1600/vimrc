@@ -1,10 +1,15 @@
 # Vim directory
 
-My configuration files and plugins for [Vim](http://en.wikipedia.org/wiki/Vim_(text_editor)). 
+My configuration files and plugins for [Vim](http://en.wikipedia.org/wiki/Vim_(text_editor)). Please install Vim 8 to follow the instructions below.
 
 ## Set up instructions:
 
-* Install [vim](http://www.vim.org/download.php).
+* Install Vim 8 for Ubuntu:
+````
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim
+````
 
 * Download [Vundle](https://github.com/VundleVim/Vundle.vim):
 
