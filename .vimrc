@@ -13,6 +13,10 @@ Plugin 'VundleVim/Vundle.vim'
 "
 " Keep Plugin commands between vundle#begin/end.
 "
+" Airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"
 " GitHub 
 Plugin 'tpope/vim-fugitive'
 "
@@ -104,7 +108,7 @@ set confirm                     " Y-N-C prompt if closing with unsaved changes
 "
 " Molokai
 syntax enable
-colorscheme molokai
+colorscheme monokai
 "
 " Mapleader
 let mapleader = ","
@@ -123,6 +127,10 @@ nnoremap <leader>P "+P
 "
 " Add colours to terminal
 let g:ConqueTerm_Color = 2
+"
+" Airline configuration
+let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='powerlineish'
 "
 " Shortcuts - Vimtex
 map <S-b> :VimtexCompile <CR>
@@ -143,7 +151,8 @@ let g:pandoc#modules#disabled = ["folding"]
 " Enable NERDTree on startup
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
+map <C-e> :NERDTreeToggle<CR>
+"
 " Let NERDTree show hidden files
 let NERDTreeShowHidden=1
 "
