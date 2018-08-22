@@ -69,6 +69,9 @@ Plugin 'mateusbraga/vim-spell-pt-br'
 " Surround
 Plugin 'tpope/vim-surround'
 "
+"Synstastic
+Plugin 'vim-syntastic/syntastic'
+"
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -171,3 +174,14 @@ map <C-a> :%y+ <CR>
 " Close every window and save
 nmap <silent> <leader>w :wqall <CR>
 nmap <silent> <leader>q :qa! <CR>
+"
+" Synstastic settings 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+map <C-r> :SyntasticReset<CR>
