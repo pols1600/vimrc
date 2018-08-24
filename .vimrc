@@ -111,7 +111,7 @@ set confirm                     " Y-N-C prompt if closing with unsaved changes
 "
 " Molokai
 syntax enable
-colorscheme monokai
+colorscheme molokai
 "
 " Mapleader
 let mapleader = ","
@@ -187,6 +187,7 @@ let g:syntastic_check_on_wq = 0
 map <C-r> :SyntasticReset<CR>
 
 " Add Ctrl-V to gvim
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
-vmap <C-C> "+y
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
