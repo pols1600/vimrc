@@ -69,8 +69,8 @@ Plugin 'mateusbraga/vim-spell-pt-br'
 " Surround
 Plugin 'tpope/vim-surround'
 "
-"Synstastic
-Plugin 'vim-syntastic/syntastic'
+" Synstastic
+" Plugin 'vim-syntastic/syntastic'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -89,6 +89,7 @@ filetype plugin indent on    " required
 "
 " Settings
 set number                      " Show line numbers
+set relativenumber              " Show relative line numbers
 set showmatch                   " Highlight matching brace
 set spelllang=en_gb,pt_br       " British English, Brazilian Portuguese
 autocmd BufRead,BufNewFile *.tex setlocal spell
@@ -101,7 +102,7 @@ set smartcase                   " Enable smart-case search
 set ignorecase                  " Always case-insensitive
 set incsearch                   " Searches for strings incrementally
 set smarttab                    " Enable smart-tabs
-set softtabstop=4               " Number of spaces per Tab
+set softtabstop=2               " Number of spaces per Tab
 set linebreak                   " Break lines
 set undolevels=1000             " Number of undo levels
 set nofoldenable                " Disable folding 
