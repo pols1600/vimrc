@@ -17,6 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "
+" Easymotion (<Leader><Leader>-w or -f to toggle)
+Plugin 'easymotion/vim-easymotion'
+"
 " GitHub 
 Plugin 'tpope/vim-fugitive'
 "
@@ -89,9 +92,9 @@ filetype plugin indent on    " required
 "
 " Settings
 set number                      " Show line numbers
-set relativenumber              " Show relative line numbers
+set relativenumber		" Show relative line numbers
 set showmatch                   " Highlight matching brace
-set spelllang=en_gb,pt_br       " British English, Brazilian Portuguese
+set spelllang=en_gb             " British English, Brazilian Portuguese
 autocmd BufRead,BufNewFile *.tex setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal spell
 set visualbell                  " Use visual bell (no beeping)
@@ -105,7 +108,6 @@ set smarttab                    " Enable smart-tabs
 set softtabstop=2               " Number of spaces per Tab
 set linebreak                   " Break lines
 set undolevels=1000             " Number of undo levels
-set nofoldenable                " Disable folding 
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
@@ -155,7 +157,7 @@ let g:pandoc#modules#disabled = ["folding"]
 " Enable NERDTree on startup
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-e> :NERDTreeToggle<CR>
+map <C-k><C-b> :NERDTreeToggle<CR>
 "
 " Let NERDTree show hidden files
 let NERDTreeShowHidden=1
@@ -180,15 +182,15 @@ nmap <silent> <leader>q :qa! <CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 map <C-r> :SyntasticReset<CR>
-
+"
 " Add Ctrl-V to gvim
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+"
