@@ -56,7 +56,7 @@ Plugin 'plasticboy/vim-markdown'
 "
 " RMarkdown
 Plugin 'vim-pandoc/vim-rmarkdown'
-"
+	"
 " Vim Slime
 Plugin 'jpalardy/vim-slime'
 "
@@ -135,8 +135,8 @@ nnoremap <leader>Y "+y$
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 "
-" Add colours to terminal
-let g:ConqueTerm_Color = 2
+" Open vertical terminal 
+map <C-S-t> :botright vertical terminal <CR>
 "
 " Airline configuration
 let g:airline#extensions#tabline#enabled=1
@@ -222,4 +222,4 @@ nmap <leader>3 :bfirst<CR>:2bn<CR>
 nmap <leader>4 :bfirst<CR>:3bn<CR>
 nnoremap <C-S-tab> :bprevious<CR>
 nnoremap <C-tab>   :bnext<CR>
-"
+"" 
