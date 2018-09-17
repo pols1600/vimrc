@@ -19,6 +19,8 @@ Plugin 'vim-airline/vim-airline-themes'
 "
 " Easymotion (<Leader><Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-easymotion.vim'
 "
 " GitHub 
 Plugin 'tpope/vim-fugitive'
@@ -154,13 +156,31 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 " Disable pandoc folding
 let g:pandoc#modules#disabled = ["folding"]
 "
+" Some shortcuts for easymotion:
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+"
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+"
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+"
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+"
 " Enable NERDTree on startup
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-k><C-b> :NERDTreeToggle<CR>
 "
 " Let NERDTree show hidden files
 let NERDTreeShowHidden=1
+"
+" Close NERDTreee with Ctrl+k Ctrl+b
+map <C-k><C-b> :NERDTreeToggle<CR>
 "
 " Remove indentation from a file
 map <F3> :setl noai nocin nosi inde= <CR>
@@ -169,14 +189,10 @@ map <F3> :setl noai nocin nosi inde= <CR>
 filetype indent off
 "
 " Clear highlighting by pressing Enter (Return) in normal modemap
-map <silent>  <F4> :noh <CR>
+nnoremap <cr> :noh<CR><CR>:<backspace>
 "
 " Yank all text
 map <C-a> :%y+ <CR>
-"
-" Close every window and save
-nmap <silent> <leader>w :wqall <CR>
-nmap <silent> <leader>q :qa! <CR>
 "
 " Synstastic settings 
 set statusline+=%#warningmsg#
