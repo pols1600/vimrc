@@ -69,6 +69,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `:tabmove 0` move tab to the beginning
 * `:tabmove 1` move current tab to become the 2nd tab
 * `<Ctrl-w> h` move to the left window (use `l` to move to the right window, `j` below, `k` above)
+* `<Ctrl-w> L` move window to the left (note the capital letters. Use it with `K`, `H`, etc)
 * `<Ctrl-w> c` close window
 
 ## LaTeX
