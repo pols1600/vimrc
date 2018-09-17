@@ -37,7 +37,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'ascenator/L9', {'name': 'newL9'}
 "
 " LaTeX
-Plugin 'lervag/vimtex' 
+" Plugin 'lervag/vimtex'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 "
 " NERDTree
 Plugin 'scrooloose/nerdtree' 
@@ -141,12 +142,14 @@ let g:ConqueTerm_Color = 2
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='powerlineish'
 "
-" Shortcuts - Vimtex
-map <S-b> :VimtexCompile <CR>
+" Compile LaTeX
+map <S-b> :Latexmk <CR>
+"
+" View PDF
+map <S-b><S-v> :LatexView <CR>
 " 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "vimterminal"
-let g:slime_default_config = {"vertical" : ":vsplit"}
 "
 " Set filetype of files with extension .tex to tex
 let g:tex_flavor='latex'
