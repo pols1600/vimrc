@@ -21,6 +21,19 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `$` go to the end of the line
 * `A` append at end of line
 * `o` insert at new line below
+* `Ctrl-Shift-B` page up
+* `Ctrl-Shift-F` page down
+* `Ctrl-Y` move view pane up
+* `Ctrl-E` move view pane down
+* `*` search for next word under cursor
+* `#` search for previous word under cursor
+* `/word` search for word
+* `/word/e+1` move to 1 space after the end of the word
+* `:s/pattern/replace/g` change each 'pattern' by 'replace' on the current line
+* `:%s/pattern/replace/g` change each 'pattern' by 'replace' in the current file
+* `<Leader>f{character}` move to {character}
+* `<Leader>L` move to line
+* `<Leader>w` move to word
 * `x` delete character under cursor
 * `dw` delete everything right from the cursor to the start of next word (and put it into the default register)
 * `dd` delete line (and put it into the default register)
