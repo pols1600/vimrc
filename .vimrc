@@ -39,14 +39,11 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 " LaTeX
 Plugin 'lervag/vimtex' 
 "
-" Neotex
-Plugin 'donRaphaco/neotex'
-"
-" Ncm-R
-Plugin 'gaalcaras/ncm-R'
-"
 " NERDTree
 Plugin 'scrooloose/nerdtree' 
+"
+" Neotex
+Plugin 'donRaphaco/neotex' 
 "
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
@@ -67,6 +64,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'rbonvall/snipmate-snippets-bib'
 "
 " Spelling -- Brazilian Portuguese
 Plugin 'mateusbraga/vim-spell-pt-br'
@@ -103,6 +101,8 @@ set visualbell                  " Use visual bell (no beeping)
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
+set splitright                  " Always split right
+set splitbelow                  " Always split below
 set smartcase                   " Enable smart-case search
 set ignorecase                  " Always case-insensitive
 set incsearch                   " Searches for strings incrementally
@@ -113,6 +113,7 @@ set undolevels=1000             " Number of undo levels
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
+set guifont=Monospace\ 11       " Font size
 "
 " Molokai
 syntax enable
@@ -145,6 +146,7 @@ map <S-b> :VimtexCompile <CR>
 " 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "vimterminal"
+let g:slime_default_config = {"vertical" : ":vsplit"}
 "
 " Set filetype of files with extension .tex to tex
 let g:tex_flavor='latex'
@@ -195,14 +197,14 @@ nnoremap <cr> :noh<CR><CR>:<backspace>
 map <C-a> :%y+ <CR>
 "
 " Synstastic settings 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-map <C-r> :SyntasticReset<CR>
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"map <C-r> :SyntasticReset<CR>
 "
 " Add Ctrl-V to gvim
 vmap <C-c> "+yi
@@ -217,3 +219,4 @@ nmap <leader>3 :bfirst<CR>:2bn<CR>
 nmap <leader>4 :bfirst<CR>:3bn<CR>
 nnoremap <C-S-tab> :bprevious<CR>
 nnoremap <C-tab>   :bnext<CR>
+"
