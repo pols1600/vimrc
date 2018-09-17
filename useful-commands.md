@@ -25,12 +25,6 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `Ctrl-Shift-F` page down
 * `Ctrl-Y` move view pane up
 * `Ctrl-E` move view pane down
-* `*` search for next word under cursor
-* `#` search for previous word under cursor
-* `/word` search for word
-* `/word/e+1` move to 1 space after the end of the word
-* `:s/pattern/replace/g` change each 'pattern' by 'replace' on the current line
-* `:%s/pattern/replace/g` change each 'pattern' by 'replace' in the current file
 * `<Leader>f{character}` move to {character}
 * `<Leader>L` move to line
 * `<Leader>w` move to word
@@ -42,11 +36,16 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `gg` go to the first line
 * `ˆ` jump to the first non-blank character of the line
 * `%` move to matching character (default supported pairs: '()', '{}', '[]' - use :h matchpairs in vim for more info)
-* `˜` swtich case
+* `˜` switch case
+* `<Ctrl-Tab>` go to next buffer (custom)
+* `<Leader>1` go to buffer #1
 * `/pattern` search for pattern
 * `?pattern` search backward for pattern
+* `/pattern/e+1` move to 1 space after the end of the word
 * `n` repeat seach
-* `:%s/old/new/gc` replace all old with new throughout file with confirmations
+* `*` search for next word under cursor
+* `#` search for previous word under cursor
+* `:%s/old/new/gc` replace all old with new throughout file with confirmation
 * `:noh` remove highlighting of search matches
 * `r` replace a single character
 * `J` join line below to the current one with one space in between
@@ -57,11 +56,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-a>` yank all text (custom)
 * `r` replace character
 * `ce` change word
-* `/word` searches for _word_
-* `:%s/old/new/g` replace all occurrences of _old_ with _new_ (add `w` for confirmation) 
 * `<Ctrl-n>` autocomplete
-* `:noh` turn off search highlighting 
-* `<F4>` clear search highlighting (custom, use it in normal mode)
 * `<F3>` remove indentation from current file (custom)
 * `yyp` duplicate line
 * `fa` jump to the next _a_ in line (use with any letter)
