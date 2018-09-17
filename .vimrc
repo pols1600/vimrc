@@ -210,3 +210,10 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 "
+" Move buffers
+nmap <leader>1 :bfirst<CR>
+nmap <leader>2 :bfirst<CR>:bn<CR>
+nmap <leader>3 :bfirst<CR>:2bn<CR>
+nmap <leader>4 :bfirst<CR>:3bn<CR>
+nnoremap <C-S-tab> :bprevious<CR>
+nnoremap <C-tab>   :bnext<CR>
