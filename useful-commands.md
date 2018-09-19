@@ -38,6 +38,9 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `%` move to matching character (default supported pairs: '()', '{}', '[]' - use :h matchpairs in vim for more info)
 * `˜` switch case
 * `<Ctrl-Tab>` go to next buffer (custom)
+* `<Ctrl-e>` and `<Ctrl-y>` scroll
+* `<Ctrl-Shift-F>` go down one window
+* `<Ctrl-Shift-B>` go up one window
 * `<Leader>1` go to buffer #1
 * `/pattern` search for pattern
 * `?pattern` search backward for pattern
@@ -79,7 +82,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 
 * `<Shift-b>` build a pdf with latexmk (custom)
 * `<Shift-b><Shift-v>` view pdf (custom)
-* `<Ctrl-e>` and `<Ctrl-y>` scroll
+* `<Shift-b><Shift-c>` clean auxiliary files
 * `itemize-tab` (itemize), `fig-tab` (figure), `enum-tab` (enumerate), `it-tab` (italics), `bf-tab` (boldface), `fig-tab` (figure), `sec-tab`(section), `eql` (equation) 
 * `<Ctrl-x><Ctrl-n>` autocomplete BibTeX entry (type the first letter of the reference within `\cite{}`, then `<Ctrl-x><Ctrl-n>`)
 * `<Ctrl-x><Ctrl-o>` opens a list of BibTeX entries within `\cite{}`
