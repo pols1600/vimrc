@@ -105,8 +105,8 @@ set visualbell                  " Use visual bell (no beeping)
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
-set splitright                  " Always split right
 set splitbelow                  " Always split below
+set splitright                  " Always split right
 set smartcase                   " Enable smart-case search
 set ignorecase                  " Always case-insensitive
 set incsearch                   " Searches for strings incrementally
@@ -170,6 +170,9 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 "
 " Disable pandoc folding
 let g:pandoc#modules#disabled = ["folding"]
+"
+" Open terminal on the right
+map <Leader>t :botright vertical terminal <CR>
 "
 " Some shortcuts for easymotion:
 " <Leader>f{char} to move to {char}
