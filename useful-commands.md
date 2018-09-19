@@ -68,7 +68,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `gt` move to next tab
 * `gT` move to previous tab
 * `#gt` move to tab number #
-* `<Ctrl-Shift-t>` open new vertical terminal (custom)
+* `<Leader> t` open new vertical terminal (custom)
 * `#gt` move to tab number #
 * `#gt` move to tab number #
 * `:tabmove` move tab to the end
