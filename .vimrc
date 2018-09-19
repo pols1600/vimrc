@@ -37,8 +37,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'ascenator/L9', {'name': 'newL9'}
 "
 " LaTeX
-" Plugin 'lervag/vimtex'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'lervag/vimtex'
+" Plugin 'LaTeX-Box-Team/LaTeX-Box'
 "
 " NERDTree
 Plugin 'scrooloose/nerdtree' 
@@ -143,10 +143,14 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='powerlineish'
 "
 " Compile LaTeX
-map <S-b> :Latexmk <CR>
+map <S-b> :VimtexCompile <CR>
+let g:vimtex_quickfix_open_on_warning = 0
 "
 " View PDF
-map <S-b><S-v> :LatexView <CR>
+map <S-b><S-v> :VimtexView <CR>
+"
+" Vimtex clean files
+map <S-b><S-c> :VimtexClean <CR>
 " 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "vimterminal"
