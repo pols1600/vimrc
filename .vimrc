@@ -76,6 +76,9 @@ Plugin 'tpope/vim-surround'
 " Synstastic
 " Plugin 'vim-syntastic/syntastic'
 "
+" YouCompleteMe
+"Plugin 'Valloric/YouCompleteMe'
+"
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -152,6 +155,9 @@ map <S-b><S-v> :VimtexView <CR>
 " Vimtex clean files
 map <S-b><S-c> :VimtexClean <CR>
 " 
+" Vimtex open TOC
+map <S-b><S-t> :VimtexTocOpen <CR>
+"
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "vimterminal"
 "
