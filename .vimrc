@@ -76,9 +76,6 @@ Plugin 'tpope/vim-surround'
 " Synstastic
 " Plugin 'vim-syntastic/syntastic'
 "
-" YouCompleteMe
-"Plugin 'Valloric/YouCompleteMe'
-"
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -143,7 +140,7 @@ map <C-S-t> :botright vertical terminal <CR>
 "
 " Airline configuration
 let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='powerlineish'
+let g:airline_theme='dark'
 "
 " Compile LaTeX
 map <S-b> :VimtexCompile <CR>
