@@ -1,3 +1,9 @@
+" __   _(_)_ __ ___  _ __ ___
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__
+"   \_/ |_|_| |_| |_|_|  \___|
+"
+
 set nocompatible              " Be iMproved, required
 filetype off                  " Required
 
@@ -36,36 +42,36 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 Plugin 'ascenator/L9', {'name': 'newL9'}
 "
-" LaTeX
-Plugin 'lervag/vimtex'
-" Plugin 'LaTeX-Box-Team/LaTeX-Box'
-"
-" NERDTree
-Plugin 'scrooloose/nerdtree' 
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 "
 " Neotex
 Plugin 'donRaphaco/neotex' 
+"
+" NERDTree
+Plugin 'scrooloose/nerdtree' 
 "
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 "
-" Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-"
 " RMarkdown
 Plugin 'vim-pandoc/vim-rmarkdown'
-	"
-" Vim Slime
-Plugin 'jpalardy/vim-slime'
 "
 " Snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
+"
+" Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
-Plugin 'rbonvall/snipmate-snippets-bib'
+"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 "
 " Spelling -- Brazilian Portuguese
 Plugin 'mateusbraga/vim-spell-pt-br'
@@ -73,9 +79,15 @@ Plugin 'mateusbraga/vim-spell-pt-br'
 " Surround
 Plugin 'tpope/vim-surround'
 "
-" Synstastic
-" Plugin 'vim-syntastic/syntastic'
+" Vim Slime
+Plugin 'jpalardy/vim-slime'
 "
+" Vimtex
+Plugin 'lervag/vimtex'
+"
+" Vimcompletesme 
+Plugin 'ajh17/VimCompletesMe'
+" 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -99,6 +111,8 @@ set spelllang=en_gb             " British English, Brazilian Portuguese
 autocmd BufRead,BufNewFile *.tex setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal spell
 set visualbell                  " Use visual bell (no beeping)
+set wildmenu                    " Show menu autocomplete options
+set wildmode=longest:full,full  " Autocompletion
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
@@ -155,8 +169,11 @@ map <S-b><S-c> :VimtexClean <CR>
 " Vimtex open TOC
 map <S-b><S-t> :VimtexTocOpen <CR>
 "
+" Vimtex Neovim
+let g:vimtex_compiler_progname = 'nvr'
+"
 " Vim-Slime: set up Vim Terminal
-let g:slime_target = "vimterminal"
+let g:slime_target = "terminal"
 "
 " Set filetype of files with extension .tex to tex
 let g:tex_flavor='latex'
@@ -208,16 +225,6 @@ nnoremap <cr> :noh<CR><CR>:<backspace>
 "
 " Yank all text
 map <C-a> :%y+ <CR>
-"
-" Synstastic settings 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"map <C-r> :SyntasticReset<CR>
 "
 " Add Ctrl-V to gvim
 vmap <C-c> "+yi
