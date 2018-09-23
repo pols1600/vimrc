@@ -27,11 +27,11 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-easymotion.vim'
 
-" GitHub 
-Plugin 'tpope/vim-fugitive'
-
 " GitGutter
 Plugin 'airblade/vim-gitgutter'
+
+" GitHub 
+Plugin 'tpope/vim-fugitive'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
@@ -167,6 +167,9 @@ map <S-b><S-c> :VimtexClean <CR>
  
 " Vimtex open TOC
 map <S-b><S-t> :VimtexTocOpen <CR>
+
+" Disable Vimtex callback
+let g:vimtex_compiler_latexmk = {'callback' : 0}
 
 " Vimtex Neovim
 let g:vimtex_compiler_progname = 'nvr'
