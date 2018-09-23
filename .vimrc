@@ -73,10 +73,19 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Spelling -- Brazilian Portuguese
-Plugin 'mateusbraga/vim-spell-pt-br'
+"Plugin 'mateusbraga/vim-spell-pt-br'
 
 " Surround
 Plugin 'tpope/vim-surround'
+
+" Vimcompletesme 
+Plugin 'ajh17/VimCompletesMe'
+
+" Vim Lexical
+Plugin 'reedes/vim-lexical'
+
+" Vim Pencil
+Plugin 'reedes/vim-pencil'
 
 " Vim Slime
 Plugin 'jpalardy/vim-slime'
@@ -84,8 +93,8 @@ Plugin 'jpalardy/vim-slime'
 " Vimtex
 Plugin 'lervag/vimtex'
 
-" Vimcompletesme 
-Plugin 'ajh17/VimCompletesMe'
+" Vimwordy
+Plugin 'reedes/vim-wordy'
  
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -106,12 +115,12 @@ filetype plugin indent on    " required
 set number                      " Show line numbers
 set relativenumber		" Show relative line numbers
 set showmatch                   " Highlight matching brace
-set spelllang=en_gb             " British English, Brazilian Portuguese
+set spelllang=en                " British English
 autocmd BufRead,BufNewFile *.tex setlocal spell
-autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.bib setlocal spell
+autocmd BufRead,BufNewFile *.md  setlocal spell
 set visualbell                  " Use visual bell (no beeping)
 set wildmenu                    " Show menu autocomplete options
-set wildmode=longest:full,full  " Autocompletion
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
@@ -154,10 +163,13 @@ map <C-S-t> :botright vertical terminal <CR>
 " Airline configuration
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='dark'
+let g:airline_section_x = '%{PencilMode()}'
 
 " Compile LaTeX
 map <S-b> :VimtexCompile <CR>
 let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:vimtex_fold_enabled = 0
 
 " View PDF
 map <S-b><S-v> :VimtexView <CR>
@@ -168,11 +180,9 @@ map <S-b><S-c> :VimtexClean <CR>
 " Vimtex open TOC
 map <S-b><S-t> :VimtexTocOpen <CR>
 
-" Disable Vimtex callback
-let g:vimtex_compiler_latexmk = {'callback' : 0}
-
-" Vimtex Neovim
-let g:vimtex_compiler_progname = 'nvr'
+" TogglePencil (soft/hard line breaks)
+map <S-b><S-p> :SoftPencil <CR>
+map <S-b><S-h> :TogglePencil <CR>
 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "terminal"
@@ -239,6 +249,6 @@ nmap <leader>1 :bfirst<CR>
 nmap <leader>2 :bfirst<CR>:bn<CR>
 nmap <leader>3 :bfirst<CR>:2bn<CR>
 nmap <leader>4 :bfirst<CR>:3bn<CR>
-nnoremap <C-S-tab> :bprevious<CR>
-nnoremap <C-tab>   :bnext<CR>
+nmap <C-S-tab> :bprevious<CR>
+nmap <C-tab>   :bnext<CR>
 "" 
