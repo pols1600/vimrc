@@ -86,6 +86,8 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `itemize-tab` (itemize), `fig-tab` (figure), `enum-tab` (enumerate), `it-tab` (italics), `bf-tab` (boldface), `fig-tab` (figure), `sec-tab`(section), `eql` (equation) 
 * `<Ctrl-x><Ctrl-n>` autocomplete BibTeX entry (type the first letter of the reference within `\cite{}`, then `<Ctrl-x><Ctrl-n>`)
 * `<Ctrl-x><Ctrl-o>` opens a list of BibTeX entries within `\cite{}`
+* `<Shift-b><Shift-p>` turns soft linebreaks on
+* `<Shift-b><Shift-h` turn hard linebreaks on (default)
 * `:NeoTexOn` turn live pdf preview on
 
 ## Pandoc
