@@ -30,4 +30,6 @@ $ vim .vimrc +PluginInstall +qall
 
 * Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.vim/colors`
 
+* Sometimes, vim's spellchecker doesn't work with well with `.tex` files. If you're using Ubuntu, please add `syntax spell toplevel` to `usr/share/vim/vimXX/syntax/tex.vim` (replace `vimXX` with your vim version)
+
 * Enjoy it! :)
