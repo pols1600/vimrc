@@ -22,6 +22,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Auto-save
+Plugin 'vim-scripts/vim-auto-save'
+
 " Easymotion (<Leader><Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
@@ -73,7 +76,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Spelling -- Brazilian Portuguese
-"Plugin 'mateusbraga/vim-spell-pt-br'
+Plugin 'mateusbraga/vim-spell-pt-br'
 
 " Surround
 Plugin 'tpope/vim-surround'
@@ -157,13 +160,13 @@ nnoremap <leader>Y "+y$
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 
-" Open vertical terminal 
-map <C-S-t> :botright vertical terminal <CR>
-
 " Airline configuration
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='dark'
 let g:airline_section_x = '%{PencilMode()}'
+
+" Auto-save
+let g:auto_save = 1
 
 " Compile LaTeX
 map <S-b> :VimtexCompile <CR>
@@ -235,6 +238,8 @@ filetype indent off
 " Clear highlighting by pressing Enter (Return) in normal modemap
 nnoremap <cr> :noh<CR><CR>:<backspace>
 
+" Delete buffer
+map <Leader>d :bd<CR>
 " Yank all text
 map <C-a> :%y+ <CR>
 
@@ -249,6 +254,7 @@ nmap <leader>1 :bfirst<CR>
 nmap <leader>2 :bfirst<CR>:bn<CR>
 nmap <leader>3 :bfirst<CR>:2bn<CR>
 nmap <leader>4 :bfirst<CR>:3bn<CR>
+nmap <leader>5 :bfirst<CR>:4bn<CR>
 nmap <C-S-tab> :bprevious<CR>
 nmap <C-tab>   :bnext<CR>
 "" 
