@@ -22,16 +22,16 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Auto-save
-Plugin 'vim-scripts/vim-auto-save'
-
-" Easymotion (<Leader><Leader>-w or -f to toggle)
+" Easymotion (<Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-easymotion.vim'
 
 " GitGutter
 Plugin 'airblade/vim-gitgutter'
+
+" Gruvbox
+Plugin 'morhetz/gruvbox'
 
 " GitHub 
 Plugin 'tpope/vim-fugitive'
@@ -127,7 +127,6 @@ set wildmenu                    " Show menu autocomplete options
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
-set splitbelow                  " Always split below
 set splitright                  " Always split right
 set smartcase                   " Enable smart-case search
 set ignorecase                  " Always case-insensitive
@@ -141,9 +140,10 @@ set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
 set guifont=Monospace\ 11       " Font size
 
-" Molokai
+" Gruvbox
 syntax enable
-colorscheme molokai
+colorscheme gruvbox
+set background=dark
 
 " Mapleader
 let mapleader = ","
@@ -162,11 +162,11 @@ nnoremap <leader>P "+P
 
 " Airline configuration
 let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='dark'
+let g:airline_theme='gruvbox'
 let g:airline_section_x = '%{PencilMode()}'
 
 " Auto-save
-let g:auto_save = 1
+:au InsertLeave <buffer> update 
 
 " Compile LaTeX
 map <S-b> :VimtexCompile <CR>
