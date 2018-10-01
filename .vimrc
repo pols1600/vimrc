@@ -30,6 +30,9 @@ Plugin 'haya14busa/incsearch-easymotion.vim'
 " GitGutter
 Plugin 'airblade/vim-gitgutter'
 
+" Goyo 
+Plugin 'junegunn/goyo.vim'
+
 " Gruvbox
 Plugin 'morhetz/gruvbox'
 
@@ -142,6 +145,7 @@ set guifont=Monospace\ 11       " Font size
 
 " Gruvbox
 syntax enable
+let g:gruvbox_italic=1
 colorscheme gruvbox
 set background=dark
 
