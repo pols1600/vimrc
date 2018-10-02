@@ -33,26 +33,15 @@ Plugin 'airblade/vim-gitgutter'
 " Goyo 
 Plugin 'junegunn/goyo.vim'
 
-" Gruvbox
-Plugin 'morhetz/gruvbox'
-
 " GitHub 
 Plugin 'tpope/vim-fugitive'
 
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-Plugin 'ascenator/L9', {'name': 'newL9'}
+" Gruvbox
+Plugin 'morhetz/gruvbox'
 
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-
-" Neotex
-Plugin 'donRaphaco/neotex' 
 
 " NERDTree
 Plugin 'scrooloose/nerdtree' 
@@ -70,17 +59,6 @@ Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" Spelling -- Brazilian Portuguese
-Plugin 'mateusbraga/vim-spell-pt-br'
-
 " Surround
 Plugin 'tpope/vim-surround'
 
@@ -97,11 +75,12 @@ Plugin 'reedes/vim-pencil'
 Plugin 'jpalardy/vim-slime'
 
 " Vimtex
-Plugin 'lervag/vimtex'
+"Plugin 'vim-latex/vim-latex'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " Vimwordy
 Plugin 'reedes/vim-wordy'
- 
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -121,10 +100,9 @@ filetype plugin indent on    " required
 set number                      " Show line numbers
 set relativenumber		" Show relative line numbers
 set showmatch                   " Highlight matching brace
-set spelllang=en                " British English
-autocmd BufRead,BufNewFile *.tex setlocal spell
-autocmd BufRead,BufNewFile *.bib setlocal spell
-autocmd BufRead,BufNewFile *.md  setlocal spell
+set spelllang=en_gb             " British English
+autocmd FileType plaintex,tex,latex syntax spell toplevel
+autocmd FileType plaintex,tex,latex,md,bib set spl=en_gb spell
 set visualbell                  " Use visual bell (no beeping)
 set wildmenu                    " Show menu autocomplete options
 set mouse=a                     " Automatically enable mouse usage
@@ -142,10 +120,13 @@ set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
 set guifont=Monospace\ 11       " Font size
+set nospell
+set modeline
 
 " Gruvbox
 syntax enable
 let g:gruvbox_italic=1
+let g:gruvbox_guisp_fallback = "bg"
 colorscheme gruvbox
 set background=dark
 
@@ -173,20 +154,14 @@ let g:airline_section_x = '%{PencilMode()}'
 :au InsertLeave <buffer> update 
 
 " Compile LaTeX
-map <S-b> :VimtexCompile <CR>
-let g:vimtex_quickfix_open_on_warning = 0
-let g:vimtex_compiler_latexmk = {'callback' : 0}
-let g:vimtex_fold_enabled = 0
+map <S-b> :Latexmk <CR>
 
 " View PDF
-map <S-b><S-v> :VimtexView <CR>
+map <S-b><S-v> :LatexView <CR>
 
 " Vimtex clean files
-map <S-b><S-c> :VimtexClean <CR>
+map <S-b><S-c> :LatexmkClean!  <CR>
  
-" Vimtex open TOC
-map <S-b><S-t> :VimtexTocOpen <CR>
-
 " TogglePencil (soft/hard line breaks)
 map <S-b><S-p> :SoftPencil <CR>
 map <S-b><S-h> :TogglePencil <CR>
