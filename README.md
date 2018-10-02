@@ -34,4 +34,4 @@ $ vim .vimrc +PluginInstall +qall
 
 ![](https://github.com/danilofreire/vimrc/raw/master/vim.png)
 
-* Enjoy it! :)
+I hope you enjoy it! :)
