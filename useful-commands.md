@@ -78,7 +78,8 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-w> L` move window to the right (note the capital letters. Use it with `H`, `J` and `K` too)
 * `<Ctrl-w> c` close window
 * `<Leader> d` close buffer
-
+* `za` open/close fold
+* `zx` refresh folds
 ## LaTeX
 
 * `<Shift-b>` build a pdf with latexmk (custom)
