@@ -28,8 +28,10 @@ $ mv .vimrc /home/username/
 $ vim .vimrc +PluginInstall +qall
 ```
 
-* Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.vim/colors`
+* Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.vim/colors`. I currently use [gruvbox](https://github.com/morhetz/gruvbox), but if you like molokai, go ahead.
 
-* Sometimes, vim's spellchecker doesn't work with well with `.tex` files. If you're using Ubuntu, please add `syntax spell toplevel` to `usr/share/vim/vimXX/syntax/tex.vim` (replace `vimXX` with your vim version)
+* I'm also using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. If you're on Ubuntu, install the font with `apt get install fonts-firacode` or by following [these instructions](https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html). That's how the editor looks like: 
+
+![](https://github.com/danilofreire/vimrc/raw/master/vim.png)
 
 * Enjoy it! :)
