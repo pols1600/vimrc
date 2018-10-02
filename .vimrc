@@ -119,7 +119,7 @@ set undolevels=1000             " Number of undo levels
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
-set guifont=Monospace\ 11       " Font size
+set guifont=Inconsolata\ 14     " Font size
 set nospell                     " No spelling for all files
 set modeline                    " Set variables specific to files
 
@@ -131,7 +131,7 @@ colorscheme gruvbox
 set background=dark
 
 " Set nospell
-map <leader>n :set nospell <CR>
+map <leader>n :setlocal nospell <CR>
 
 " Mapleader
 let mapleader = ","
