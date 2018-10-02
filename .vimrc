@@ -75,8 +75,8 @@ Plugin 'reedes/vim-pencil'
 Plugin 'jpalardy/vim-slime'
 
 " Vimtex
-"Plugin 'vim-latex/vim-latex'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'lervag/vimtex'
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " Vimwordy
 Plugin 'reedes/vim-wordy'
@@ -101,8 +101,8 @@ set number                      " Show line numbers
 set relativenumber		" Show relative line numbers
 set showmatch                   " Highlight matching brace
 set spelllang=en_gb             " British English
-autocmd FileType plaintex,tex,latex syntax spell toplevel
-autocmd FileType plaintex,tex,latex,md,bib set spl=en_gb spell
+autocmd FileType plaintex,tex,latex syntax spell toplevel " spelling
+autocmd FileType plaintex,tex,latex,md,markdown,bib,bibtex setlocal spl=en_gb spell
 set visualbell                  " Use visual bell (no beeping)
 set wildmenu                    " Show menu autocomplete options
 set mouse=a                     " Automatically enable mouse usage
@@ -120,8 +120,8 @@ set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
 set guifont=Monospace\ 11       " Font size
-set nospell
-set modeline
+set nospell                     " No spelling for all files
+set modeline                    " Set variables specific to files
 
 " Gruvbox
 syntax enable
@@ -129,6 +129,9 @@ let g:gruvbox_italic=1
 let g:gruvbox_guisp_fallback = "bg"
 colorscheme gruvbox
 set background=dark
+
+" Set nospell
+map <leader>n :set nospell <CR>
 
 " Mapleader
 let mapleader = ","
@@ -154,13 +157,19 @@ let g:airline_section_x = '%{PencilMode()}'
 :au InsertLeave <buffer> update 
 
 " Compile LaTeX
-map <S-b> :Latexmk <CR>
+map <S-b> :VimtexCompile  <CR>
 
 " View PDF
-map <S-b><S-v> :LatexView <CR>
+map <S-b><S-v> :VimtexView <CR>
 
-" Vimtex clean files
-map <S-b><S-c> :LatexmkClean!  <CR>
+" Clean files
+map <S-b><S-c> :VimtexClean  <CR>
+
+" Toggle TOC
+map <S-b><S-t> :VimtexTocOpen <CR>
+
+" Vimtex Config
+let g:vimtex_fold_enabled=1
  
 " TogglePencil (soft/hard line breaks)
 map <S-b><S-p> :SoftPencil <CR>
