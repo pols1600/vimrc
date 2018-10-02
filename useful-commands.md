@@ -77,13 +77,15 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-w> l` move focus to the right window (use `h` to move to the right window, `j` below, `k` above)
 * `<Ctrl-w> L` move window to the right (note the capital letters. Use it with `H`, `J` and `K` too)
 * `<Ctrl-w> c` close window
+* `<Leader> d` close buffer
 
 ## LaTeX
 
 * `<Shift-b>` build a pdf with latexmk (custom)
 * `<Shift-b><Shift-v>` view pdf (custom)
-* `<Shift-b><Shift-c>` clean auxiliary files
-* `itemize-tab` (itemize), `fig-tab` (figure), `enum-tab` (enumerate), `it-tab` (italics), `bf-tab` (boldface), `fig-tab` (figure), `sec-tab`(section), `eql` (equation) 
+* `<Shift-b><Shift-c>` clean auxiliary files (custom)
+* `<Shift-b><Shift-t>` open table of contents (custom)
+* `it-tab` (itemize), `fig-tab` (figure), `enum-tab` (enumerate), `ita-tab` (italics), `bf-tab` (boldface), `fig-tab` (figure), `sec-tab`(section), `eq-tab` (equation) 
 * `<Ctrl-x><Ctrl-n>` autocomplete BibTeX entry (type the first letter of the reference within `\cite{}`, then `<Ctrl-x><Ctrl-n>`)
 * `<Ctrl-x><Ctrl-o>` opens a list of BibTeX entries within `\cite{}`
 * `<Shift-b><Shift-p>` turns soft linebreaks on
@@ -98,6 +100,9 @@ Here is a list of commands that I regularly use. Some of them are customised.
 
 * `z=` in normal mode (click over the word first)
 * `zG` add new word to dictionary
+* `]s` next wrong word
+* `[s` previous wrong word
+* `<Leader> n` set nospell (custom)
 
 ## R
 
