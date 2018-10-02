@@ -189,6 +189,9 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 let g:pandoc#modules#disabled = ["folding"]
 
 " Open terminal on the right
+map <Leader>n :setlocal nospell<CR>
+ 
+" Open terminal on the right
 map <Leader>t :botright vertical terminal <CR>
 
 " Some shortcuts for easymotion:
