@@ -7,7 +7,7 @@
 set nocompatible              " Be iMproved, required
 filetype off                  " Required
 
-" Set the runtime path to include Vundle and initialize
+" Set the runtime path to include Vundle and initialise
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle/')
 
@@ -143,10 +143,10 @@ let maplocalleader = "-"
 nnoremap Y y$
 
 " Yank/paste to the OS clipboard with ,y and ,p
-nnoremap <leader>y "+y
-nnoremap <leader>Y "+y$
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
+nnoremap <Leader>y "+y
+nnoremap <Leader>Y "+y$
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
 
 " Airline configuration
 let g:airline#extensions#tabline#enabled=1
