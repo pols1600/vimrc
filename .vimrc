@@ -131,7 +131,7 @@ set modeline                    " Set variables specific to files
 " Gruvbox
 syntax enable
 let g:gruvbox_italic=1
-let g:gruvbox_guisp_fallback = "bg"
+let g:gruvbox_guisp_fallback="bg"
 colorscheme gruvbox
 set background=dark
 
@@ -154,10 +154,9 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 
 " Airline configuration
-let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='gruvbox'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'gruvbox'
 let g:airline_section_x = '%{PencilMode()}'
-set laststatus=2
 
 " Auto-save
 :au InsertLeave <buffer> update 
@@ -175,11 +174,21 @@ map <S-b><S-c> :VimtexClean  <CR>
 map <S-b><S-t> :VimtexTocOpen <CR>
 
 " Vimtex Config
-let g:vimtex_fold_enabled=1
- 
+let g:vimtex_fold_enabled = 1
+let g:Tex_IgnoredWarnings = 
+    \'Underfull'."\n".
+    \'Overfull'."\n".
+    \'specifier changed to'."\n".
+    \'You have requested'."\n".
+    \'Missing number, treated as zero.'."\n".
+    \'There were undefined references'."\n".
+    \'Citation %.%# undefined'."\n".
+    \'Double space found.'."\n"
+let g:Tex_IgnoreLevel = 8
+
 " TogglePencil (soft/hard line breaks)
-map <S-b><S-p> :SoftPencil <CR>
-map <S-b><S-h> :TogglePencil <CR>
+map <S-b><S-p> :SoftPencil <CR>i<Esc>`^
+map <S-b><S-h> :TogglePencil <CR>i<Esc>`^
 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "terminal"
@@ -195,10 +204,10 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 let g:pandoc#modules#disabled = ["folding"]
 
 " Open terminal on the right
-map <Leader>n :setlocal nospell<CR>
+map <Leader>n :setlocal nospell<CR>i<Esc>`^
  
 " Open terminal on the right
-map <Leader>t :botright vertical terminal <CR>
+map <Leader>t :botright vertical terminal <CR>i<Esc>`^
 
 " Some shortcuts for easymotion:
 " <Leader>f{char} to move to {char}
@@ -224,10 +233,14 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 
 " Close NERDTreee with Ctrl+k Ctrl+b
-map <C-k><C-b> :NERDTreeToggle<CR>
+map <C-k><C-b> :NERDTreeToggle<CR>i<Esc>`^
 
 " Distraction-free mode with Goyo
-map <Leader>g :Goyo <CR>
+map <Leader>g :Goyo <CR>i<Esc>`^
+
+" Screen dimensions for Goyo
+let g:goyo_width = 100
+let g:goyo_height = 100
 
 " Remove indentation from a file
 map <F3> :setl noai nocin nosi inde= <CR>
@@ -239,7 +252,7 @@ filetype indent off
 nnoremap <cr> :noh<CR><CR>:<backspace>
 
 " Delete buffer
-map <Leader>d :bd<CR>
+map <Leader>d :bd<CR>i<Esc>`^
 " Yank all text
 map <C-a> :%y+ <CR>
 
