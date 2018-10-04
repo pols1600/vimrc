@@ -68,6 +68,9 @@ Plugin 'ajh17/VimCompletesMe'
 " Vim Lexical
 Plugin 'reedes/vim-lexical'
 
+" Vim PDF
+Plugin 'rhysd/open-pdf.vim'
+
 " Vim Pencil
 Plugin 'reedes/vim-pencil'
 
@@ -113,6 +116,8 @@ set smartcase                   " Enable smart-case search
 set ignorecase                  " Always case-insensitive
 set incsearch                   " Searches for strings incrementally
 set smarttab                    " Enable smart-tabs
+set autowrite                   " Auto-save files
+set autowriteall                " Auto-save all buffers
 set softtabstop=2               " Number of spaces per Tab
 set linebreak                   " Break lines
 set undolevels=1000             " Number of undo levels
@@ -152,6 +157,7 @@ nnoremap <Leader>P "+P
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='gruvbox'
 let g:airline_section_x = '%{PencilMode()}'
+set laststatus=2
 
 " Auto-save
 :au InsertLeave <buffer> update 
@@ -219,6 +225,9 @@ let NERDTreeShowHidden=1
 
 " Close NERDTreee with Ctrl+k Ctrl+b
 map <C-k><C-b> :NERDTreeToggle<CR>
+
+" Distraction-free mode with Goyo
+map <Leader>g :Goyo <CR>
 
 " Remove indentation from a file
 map <F3> :setl noai nocin nosi inde= <CR>
