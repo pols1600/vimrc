@@ -22,6 +22,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Completor  
+"Plugin 'ajh17/VimCompletesMe'
+Plugin 'maralla/completor.vim'
+
 " Easymotion (<Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
@@ -50,6 +54,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 
+" R
+Plugin 'jalvesaq/Nvim-R'
+
 " RMarkdown
 Plugin 'vim-pandoc/vim-rmarkdown'
 
@@ -61,9 +68,6 @@ Plugin 'honza/vim-snippets'
 
 " Surround
 Plugin 'tpope/vim-surround'
-
-" Vimcompletesme 
-Plugin 'ajh17/VimCompletesMe'
 
 " Vim Lexical
 Plugin 'reedes/vim-lexical'
@@ -79,7 +83,6 @@ Plugin 'jpalardy/vim-slime'
 
 " Vimtex
 Plugin 'lervag/vimtex'
-"Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " Vimwordy
 Plugin 'reedes/vim-wordy'
@@ -182,7 +185,7 @@ map <S-b><S-p> :SoftPencil <CR>i<Esc>`^
 map <S-b><S-h> :TogglePencil <CR>i<Esc>`^
 
 " Vim-Slime: set up Vim Terminal
-let g:slime_target = "terminal"
+let g:slime_target = "vimterminal"
 
 " Set filetype of files with extension .tex to tex
 let g:tex_flavor='latex'
@@ -195,10 +198,10 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 let g:pandoc#modules#disabled = ["folding"]
 
 " Open terminal on the right
-map <Leader>n :setlocal nospell<CR>i<Esc>`^
+map <Leader>n :setlocal nospell<CR>
  
 " Open terminal on the right
-map <Leader>t :botright vertical terminal <CR>i<Esc>`^
+map <Leader>t :vsplit +terminal <CR>
 
 " Some shortcuts for easymotion:
 " <Leader>f{char} to move to {char}
@@ -244,6 +247,7 @@ nnoremap <cr> :noh<CR><CR>:<backspace>
 
 " Delete buffer
 map <Leader>d :bd<CR>i<Esc>`^
+ 
 " Yank all text
 map <C-a> :%y+ <CR>
 
