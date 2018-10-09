@@ -201,7 +201,7 @@ let g:pandoc#modules#disabled = ["folding"]
 map <Leader>n :setlocal nospell<CR>
  
 " Open terminal on the right
-map <Leader>t :vsplit +terminal <CR>
+map <Leader>t :vertical :botright :term<CR>
 
 " Some shortcuts for easymotion:
 " <Leader>f{char} to move to {char}
