@@ -127,7 +127,8 @@ set undolevels=1000             " Number of undo levels
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
-set guifont=Fira\ Code\ Regular\ 13 " Font size
+set macligatures
+set guifont=Fira\ Code:h15      " Font size
 set nospell                     " No spelling for all files
 set modeline                    " Set variables specific to files
 
@@ -137,6 +138,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_guisp_fallback="bg"
 colorscheme gruvbox
 set background=dark
+hi SpellBad cterm=underline,bold gui=underline guifg=red
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
