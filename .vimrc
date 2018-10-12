@@ -183,8 +183,8 @@ let g:vimtex_fold_enabled = 1
 let g:vimtex_quickfix_open_on_warning = 0
 
 " TogglePencil (soft/hard line breaks)
-map <S-b><S-p> :SoftPencil <CR>i<Esc>`^
-map <S-b><S-h> :TogglePencil <CR>i<Esc>`^
+map <S-b><S-p> :SoftPencil <CR>
+map <S-b><S-h> :TogglePencil <CR>
 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "vimterminal"
@@ -229,7 +229,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 
 " Close NERDTreee with Ctrl+k Ctrl+b
-map <C-k><C-b> :NERDTreeToggle<CR>i<Esc>`^
+map <C-k><C-b> :NERDTreeToggle<CR>
 
 " Distraction-free mode with Goyo
 map <Leader>g :Goyo <CR>i<Esc>`^
@@ -248,7 +248,7 @@ filetype indent off
 nnoremap <cr> :noh<CR><CR>:<backspace>
 
 " Delete buffer
-map <Leader>d :bd<CR>i<Esc>`^
+map <Leader>d :bd<CR>
  
 " Yank all text
 map <C-a> :%y+ <CR>
