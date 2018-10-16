@@ -22,9 +22,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Auto-save
+Plugin '907th/vim-auto-save'
+let g:auto_save        = 1
+let g:auto_save_silent = 1
+let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
+
 " Completor  
-"Plugin 'ajh17/VimCompletesMe'
-Plugin 'maralla/completor.vim'
+Plugin 'ervandew/supertab'
+
+" Echodoc
+Plugin 'Shougo/echodoc.vim'
 
 " Easymotion (<Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
@@ -43,6 +51,13 @@ Plugin 'tpope/vim-fugitive'
 " Gruvbox
 Plugin 'morhetz/gruvbox'
 
+" indentLines
+Plugin 'Yggdroot/indentLine'
+
+" Lion
+Plugin 'tommcdo/vim-lion'
+let g:lion_squeeze_spaces = 1
+
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -50,24 +65,27 @@ Plugin 'plasticboy/vim-markdown'
 " NERDTree
 Plugin 'scrooloose/nerdtree' 
 
+" NERDTree git
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
-
-" R
-Plugin 'jalvesaq/Nvim-R'
 
 " RMarkdown
 Plugin 'vim-pandoc/vim-rmarkdown'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
 
 " Surround
 Plugin 'tpope/vim-surround'
+
+" Targets
+Plugin 'wellle/targets.vim'
 
 " Vim Lexical
 Plugin 'reedes/vim-lexical'
@@ -121,16 +139,23 @@ set incsearch                   " Searches for strings incrementally
 set smarttab                    " Enable smart-tabs
 set autowrite                   " Auto-save files
 set autowriteall                " Auto-save all buffers
-set softtabstop=2               " Number of spaces per Tab
+set tabstop=4	                " Number of spaces per Tab
+set softtabstop=0 noexpandtab   " Tab 
+set shiftwidth=4				" Indent to be a single tab
 set linebreak                   " Break lines
 set undolevels=1000             " Number of undo levels
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
-set macligatures
+set macligatures                " Ligatures 
 set guifont=Fira\ Code:h15      " Font size
 set nospell                     " No spelling for all files
 set modeline                    " Set variables specific to files
+set completeopt+=menuone        " Autocomplete
+set completeopt+=noselect
+set shortmess+=c                " Shut off completion messages
+set belloff+=ctrlg              " If Vim beeps during completion
+hi SpellBad cterm=underline ctermfg=red
 
 " Gruvbox
 syntax enable
@@ -142,6 +167,11 @@ hi SpellBad cterm=underline,bold gui=underline guifg=red
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
+
+" indentLines
+let g:indentLine_setColors = 1
+let g:indentLine_char = '|'
+let g:indentLine_enabled = 1
 
 " Mapleader
 let mapleader = ","
@@ -199,7 +229,7 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 " Disable pandoc folding
 let g:pandoc#modules#disabled = ["folding"]
 
-" Open terminal on the right
+" Turn off spelling
 map <Leader>n :setlocal nospell<CR>
  
 " Open terminal on the right
