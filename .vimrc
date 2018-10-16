@@ -129,6 +129,7 @@ autocmd FileType plaintex,tex,latex syntax spell toplevel " spelling
 autocmd FileType plaintex,tex,latex,md,markdown,bib,bibtex setlocal spl=en_gb spell
 set visualbell                  " Use visual bell (no beeping)
 set wildmenu                    " Show menu autocomplete options
+set wildmode=longest,list
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
@@ -211,10 +212,13 @@ map <S-b><S-t> :VimtexTocOpen <CR>
 " Vimtex Config
 let g:vimtex_fold_enabled = 1
 let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_compiler_latexmk = {'callback' : 0}
 
 " TogglePencil (soft/hard line breaks)
 map <S-b><S-p> :SoftPencil <CR>
 map <S-b><S-h> :TogglePencil <CR>
+let g:pencil#conceallevel = 0     " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
+let g:pencil#concealcursor = 'n'  " n=normal, v=visual, i=insert, c=command (def)
 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "vimterminal"
@@ -240,9 +244,6 @@ map <Leader>t :vertical :botright :term<CR>
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-
 " Move to line
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
@@ -256,7 +257,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Let NERDTree show hidden files
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=0
 
 " Close NERDTreee with Ctrl+k Ctrl+b
 map <C-k><C-b> :NERDTreeToggle<CR>
