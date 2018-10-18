@@ -57,6 +57,7 @@ Plugin 'Yggdroot/indentLine'
 " Lion
 Plugin 'tommcdo/vim-lion'
 let g:lion_squeeze_spaces = 1
+let b:lion_squeeze_spaces = 1
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -171,8 +172,8 @@ map <leader>n :setlocal nospell <CR>
 
 " indentLines
 let g:indentLine_setColors = 1
-let g:indentLine_char = '|'
-let g:indentLine_enabled = 1
+let g:indentLine_char      = '|'
+let g:indentLine_enabled   = 1
 
 " Mapleader
 let mapleader = ","
@@ -191,8 +192,8 @@ nnoremap <Leader>P "+P
 
 " Airline configuration
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'gruvbox'
-let g:airline_section_x = '%{PencilMode()}'
+let g:airline_theme                      = 'gruvbox'
+let g:airline_section_x                  = '%{PencilMode()}'
 
 " Auto-save
 :au InsertLeave <buffer> update 
@@ -210,15 +211,15 @@ map <S-b><S-c> :VimtexClean  <CR>
 map <S-b><S-t> :VimtexTocOpen <CR>
 
 " Vimtex Config
-let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_enabled             = 1
 let g:vimtex_quickfix_open_on_warning = 0
-let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:vimtex_compiler_latexmk         = {'callback' : 0}
 
 " TogglePencil (soft/hard line breaks)
 map <S-b><S-p> :SoftPencil <CR>
 map <S-b><S-h> :TogglePencil <CR>
-let g:pencil#conceallevel = 0     " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
-let g:pencil#concealcursor = 'n'  " n=normal, v=visual, i=insert, c=command (def)
+let g:pencil#conceallevel  = 3 " 0  =disable, 1=one char, 2=hide char, 3=hide all (def)
+let g:pencil#concealcursor = 'n' " n=normal, v =visual, i  =insert, c   =command (def)
 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "vimterminal"
@@ -227,7 +228,7 @@ let g:slime_target = "vimterminal"
 let g:tex_flavor='latex'
 
 " Enable pandoc functionality for markdown files 
-let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+let g:pandoc#filetypes#handled         = ["pandoc", "markdown"]
 let g:pandoc#filetypes#pandoc_markdown = 0
 
 " Disable pandoc folding
@@ -266,7 +267,7 @@ map <C-k><C-b> :NERDTreeToggle<CR>
 map <Leader>g :Goyo <CR>i<Esc>`^
 
 " Screen dimensions for Goyo
-let g:goyo_width = 100
+let g:goyo_width  = 100
 let g:goyo_height = 100
 
 " Remove indentation from a file
