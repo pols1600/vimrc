@@ -159,6 +159,7 @@ set shortmess+=c                " Shut off completion messages
 set belloff+=ctrlg              " If Vim beeps during completion
 hi SpellBad cterm=underline ctermfg=red
 set termguicolors
+let g:tex_conceal = ''
 
 " Gruvbox
 syntax enable
