@@ -149,7 +149,7 @@ set undolevels=1000             " Number of undo levels
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
-set macligatures                " Ligatures 
+"set macligatures               " Ligatures 
 set guifont=Fira\ Code:h15      " Font size
 set nospell                     " No spelling for all files
 set modeline                    " Set variables specific to files
@@ -158,10 +158,11 @@ set completeopt+=noselect
 set shortmess+=c                " Shut off completion messages
 set belloff+=ctrlg              " If Vim beeps during completion
 hi SpellBad cterm=underline ctermfg=red
+set termguicolors
 
 " Gruvbox
 syntax enable
-let g:gruvbox_italic=1
+let g:gruvbox_italic=0
 let g:gruvbox_guisp_fallback="bg"
 colorscheme gruvbox
 set background=dark
