@@ -11,6 +11,8 @@ sudo apt update
 sudo apt install vim
 ```
 
+If you're using MacOS, I recommend [iterm2](https://www.iterm2.com/).
+
 * Download [Vundle](https://github.com/VundleVim/Vundle.vim):
 ```
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
