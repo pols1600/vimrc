@@ -35,7 +35,7 @@ $ nvim .vimrc +PluginInstall +qall
 * Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.vim/colors`. I currently use [gruvbox](https://github.com/morhetz/gruvbox), but if you like molokai, go ahead.
 
 * I'm also using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. You can install it with:
-````
+```
 brew tap caskroom/fonts
 brew cask install font-fira-code
 ```
