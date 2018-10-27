@@ -13,7 +13,7 @@ I recommend you to download [iterm2](https://www.iterm2.com/) and [tmux](https:/
 ```
 brew cask install iterm2
 brew install tmux
-neovim```
+```
 
 * Download [Vundle](https://github.com/VundleVim/Vundle.vim):
 ```
