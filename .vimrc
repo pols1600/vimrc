@@ -7,6 +7,7 @@
 set nocompatible              " Be iMproved, required
 filetype off                  " Required
 
+
 " Set the runtime path to include Vundle and initialise
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle/')
@@ -27,9 +28,6 @@ Plugin '907th/vim-auto-save'
 let g:auto_save        = 1
 let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
-
-" Completor  
-Plugin 'ervandew/supertab'
 
 " Echodoc
 Plugin 'Shougo/echodoc.vim'
@@ -73,6 +71,10 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 
+" R
+Plugin 'jalvesaq/Nvim-R'
+Plugin 'gaalcaras/ncm-R'
+
 " RMarkdown
 Plugin 'vim-pandoc/vim-rmarkdown'
 
@@ -85,6 +87,14 @@ Plugin 'honza/vim-snippets'
 " Surround
 Plugin 'tpope/vim-surround'
 
+" ncm2  
+"Plugin 'ervandew/supertab'
+Plugin 'ncm2/ncm2'
+Plugin 'roxma/nvim-yarp'
+Plugin 'ncm2/ncm2-github'
+Plugin 'ncm2/ncm2-path'
+Plugin 'ncm2/ncm2-bufword'
+
 " Targets
 Plugin 'wellle/targets.vim'
 
@@ -93,9 +103,6 @@ Plugin 'reedes/vim-lexical'
 
 " Vim PDF
 Plugin 'rhysd/open-pdf.vim'
-
-" Vim Pencil
-Plugin 'reedes/vim-pencil'
 
 " Vim Slime
 Plugin 'jpalardy/vim-slime'
@@ -157,9 +164,7 @@ set completeopt+=menuone        " Autocomplete
 set completeopt+=noselect
 set shortmess+=c                " Shut off completion messages
 set belloff+=ctrlg              " If Vim beeps during completion
-hi SpellBad cterm=underline ctermfg=red
-set termguicolors
-let g:tex_conceal = ''
+hi SpellBad ctermfg=red
 
 " Gruvbox
 syntax enable
@@ -167,7 +172,7 @@ let g:gruvbox_italic=0
 let g:gruvbox_guisp_fallback="bg"
 colorscheme gruvbox
 set background=dark
-hi SpellBad cterm=underline,bold gui=underline guifg=red
+hi SpellBad gui=underline guifg=red
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
@@ -195,10 +200,16 @@ nnoremap <Leader>P "+P
 " Airline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme                      = 'gruvbox'
-let g:airline_section_x                  = '%{PencilMode()}'
 
 " Auto-save
-:au InsertLeave <buffer> update 
+:au InsertLeave <buffer> update
+
+" nc2m config
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Compile LaTeX
 map <S-b> :VimtexCompile  <CR>
@@ -216,12 +227,7 @@ map <S-b><S-t> :VimtexTocOpen <CR>
 let g:vimtex_fold_enabled             = 1
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_compiler_latexmk         = {'callback' : 0}
-
-" TogglePencil (soft/hard line breaks)
-map <S-b><S-p> :SoftPencil <CR>
-map <S-b><S-h> :TogglePencil <CR>
-let g:pencil#conceallevel  = 3 " 0  =disable, 1=one char, 2=hide char, 3=hide all (def)
-let g:pencil#concealcursor = 'n' " n=normal, v =visual, i  =insert, c   =command (def)
+let g:tex_conceal = ''
 
 " Vim-Slime: set up Vim Terminal
 let g:slime_target = "vimterminal"
@@ -241,6 +247,21 @@ map <Leader>n :setlocal nospell<CR>
  
 " Open terminal on the right
 map <Leader>t :vertical :botright :term<CR>
+
+" R
+nmap <Leader>r <Plug>RStart 
+nmap <Space> <Plug>RDSendSelection 
+nmap <Space> <Plug>RDSendLine
+nmap <silent> <LocalLeader>dj :call RAction("head")<CR>
+nmap <silent> <LocalLeader>dk :call RAction("tail")<CR>
+nmap <silent> <LocalLeader>dl :call RAction("levels")<CR>
+nmap <silent> <LocalLeader>ds :call RAction("summary")<CR>
+let R_nvimpager = "vertical"
+let R_rconsole_height = 25  
+let R_args_in_stline = 1
+let r_syntax_folding = 1
+autocmd filetype r inoremap $ $<C-X><C-O>
+autocmd filetype rmd inoremap @ @<C-X><C-O>
 
 " Some shortcuts for easymotion:
 " <Leader>f{char} to move to {char}
