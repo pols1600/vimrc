@@ -24,7 +24,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 git clone https://github.com/danilofreire/vimdir
 cd vimdir/
-mv .vimrc /home/username/
+mv .vimrc /Users/username/
 ```
 
 * Open `.vimrc` and type `:PluginInstall`. From the command line:
@@ -32,9 +32,9 @@ mv .vimrc /home/username/
 nvim .vimrc +PluginInstall +qall
 ```
 
-* Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.vim/colors`. I currently use [gruvbox](https://github.com/morhetz/gruvbox), but if you like molokai, go ahead.
+* I currently use [gruvbox](https://github.com/morhetz/gruvbox), but if you like molokai, do the following: Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.config/nvim/colors`. Then select the new theme by typing `:colorscheme molokai` on Neovim.
 
-* I'm also using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. You can install it with:
+* I'm using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. You can install it with:
 ```
 brew tap caskroom/fonts
 brew cask install font-fira-code
