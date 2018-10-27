@@ -88,12 +88,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 
 " ncm2  
-"Plugin 'ervandew/supertab'
-Plugin 'ncm2/ncm2'
-Plugin 'roxma/nvim-yarp'
-Plugin 'ncm2/ncm2-github'
-Plugin 'ncm2/ncm2-path'
-Plugin 'ncm2/ncm2-bufword'
+Plugin 'ervandew/supertab'
+"Plugin 'ncm2/ncm2'
+"Plugin 'roxma/nvim-yarp'
+"Plugin 'ncm2/ncm2-github'
+"Plugin 'ncm2/ncm2-path'
+"Plugin 'ncm2/ncm2-bufword'
 
 " Targets
 Plugin 'wellle/targets.vim'
@@ -205,11 +205,32 @@ let g:airline_theme                      = 'gruvbox'
 :au InsertLeave <buffer> update
 
 " nc2m config
-autocmd BufEnter * call ncm2#enable_for_buffer()
+"autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"set completeopt=menuone,noselect
+
+" Map omnicompletion to tab
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-x>\<c-o>"
+    endif
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+" R commands
+let R_show_args = 0         " show the arguments for functions with autocompletion
+let R_args_in_stline = 0    " do not show arguments in statusline
+let R_assign = 0            " do not convert _ into <-, annoying!
+let R_insert_mode_cmds = 1  " allow R commands in insert mode
+let R_term_cmd = 'st -n R'  " command to execute R in my terminal , with window name R
+let R_clear_line = 0        " do not clear line before executing a command, sadly does not work with st
+let R_args = ['--no-save']  " call R with the --no-save option
+autocmd VimLeave * if exists("g:SendCmdToR") && string(g:SendCmdToR) != "function('SendCmdToR_fake')" | call RQuit("nosave") | endif     " exit R when you exit Vim
+
 
 " Compile LaTeX
 map <S-b> :VimtexCompile  <CR>
