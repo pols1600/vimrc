@@ -80,6 +80,8 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Leader> d` close buffer
 * `za` open/close fold
 * `zx` refresh folds
+* `<Leader> d` delete buffer (custom)
+
 ## LaTeX
 
 * `<Shift-b>` build a pdf with latexmk (custom)
@@ -107,7 +109,8 @@ Here is a list of commands that I regularly use. Some of them are customised.
 
 ## R
 
-* `<Ctrl-c><Ctrl-c>` send code to R via `vim-slime`
+* `<Leader> R` open R terminal (custom)
+* `<Space>` send R code to terminal
 
 ## Windows
 
