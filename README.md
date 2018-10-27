@@ -1,17 +1,19 @@
 # Vim directory
 
-My configuration files and plugins for [Vim](http://en.wikipedia.org/wiki/Vim_(text_editor)). Please install Vim 8 to follow the instructions below.
+My configuration files and plugins for [Neovim](https://neovim.io/). 
 
 ## Set up instructions:
 
-* Install Vim 8 for Ubuntu:
+* If you have [homebrew](https://brew.sh/) installed, just type the following line to install Neovim:
 ```
-sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update
-sudo apt install vim
+brew install neovim
 ```
 
-If you're using MacOS, I recommend [iterm2](https://www.iterm2.com/).
+I recommend you to download [iterm2](https://www.iterm2.com/) and [tmux](https://github.com/tmux/tmux) too:
+```
+brew cask install iterm2
+brew install tmux
+neovim```
 
 * Download [Vundle](https://github.com/VundleVim/Vundle.vim):
 ```
@@ -27,13 +29,19 @@ $ mv .vimrc /home/username/
 
 * Open `.vimrc` and type `:PluginInstall`. From the command line:
 ```
-$ vim .vimrc +PluginInstall +qall
+$ nvim .vimrc +PluginInstall +qall
 ```
 
 * Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.vim/colors`. I currently use [gruvbox](https://github.com/morhetz/gruvbox), but if you like molokai, go ahead.
 
-* I'm also using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. If you're on Ubuntu, install the font with `apt get install fonts-firacode` or by following [these instructions](https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html). This is how the editor looks like: 
+* I'm also using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. You can install it with:
+````
+brew tap caskroom/fonts
+brew cask install font-fira-code
+```
 
-![](https://github.com/danilofreire/vimrc/raw/master/vim.png)
+And this is how the editor looks like: 
+
+![](https://github.com/danilofreire/vimrc/raw/mac/neovim.png)
 
 I hope you enjoy it! :)
