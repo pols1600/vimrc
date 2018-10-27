@@ -250,8 +250,8 @@ let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_compiler_latexmk         = {'callback' : 0}
 let g:tex_conceal = ''
 
-" Vim-Slime: set up Vim Terminal
-let g:slime_target = "vimterminal"
+" Vim-Slime: set up tmux
+let g:slime_target = "tmux"
 
 " Set filetype of files with extension .tex to tex
 let g:tex_flavor='latex'
@@ -267,7 +267,7 @@ let g:pandoc#modules#disabled = ["folding"]
 map <Leader>n :setlocal nospell<CR>
  
 " Open terminal on the right
-map <Leader>t :vertical :botright :term<CR>
+map <Leader>t :vs +te<CR>
 
 " R
 nmap <Leader>r <Plug>RStart 
