@@ -27,6 +27,14 @@ cd vimdir/
 mv .vimrc /Users/username/
 ```
 
+* Create a `~/.config/nvim/init.vim` file with the following content:
+
+```
+set runtimepath^=/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
+```
+
 * Open `.vimrc` and type `:PluginInstall`. From the command line:
 ```
 nvim .vimrc +PluginInstall +qall
