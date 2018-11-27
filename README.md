@@ -52,4 +52,6 @@ And this is how the editor looks like:
 
 ![](https://github.com/danilofreire/vimrc/raw/master/neovim.png)
 
-I hope you enjoy it! :)
+I've recently come across [VimR](http://vimr.org/), which is a cool GUI for Neovim. It has some nice features such as HTML and Markdown preview, fuzzy file finder, and multiple windows. You might like it too!
+
+I hope you enjoy using Neovim! :)
