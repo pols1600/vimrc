@@ -25,7 +25,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `Ctrl-Shift-F` page down
 * `Ctrl-Y` move view pane up
 * `Ctrl-E` move view pane down
-* `<Leader>f{character}` move to {character}
+* `<Leader>f{character}{character}` move to {character}{character}
 * `<Leader>L` move to line
 * `<Leader>w` move to word
 * `x` delete character under cursor
@@ -80,7 +80,6 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Leader> d` close buffer
 * `za` open/close fold
 * `zx` refresh folds
-* `<Leader> d` delete buffer (custom)
 
 ## LaTeX
 
