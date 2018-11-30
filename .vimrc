@@ -307,9 +307,9 @@ autocmd filetype r inoremap $ $<C-X><C-O>
 autocmd filetype rmd inoremap @ @<C-X><C-O>
 
 " Some shortcuts for easymotion:
-" <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+" <Leader>f{char} to move to {char}{char}
+map  <Leader>f <Plug>(easymotion-bd-f2)
+nmap <Leader>f <Plug>(easymotion-overwin-f2)
 
 " Move to line
 map <Leader>L <Plug>(easymotion-bd-jk)
