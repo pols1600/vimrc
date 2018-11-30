@@ -7,7 +7,6 @@
 set nocompatible              " Be iMproved, required
 filetype off                  " Required
 
-
 " Set the runtime path to include Vundle and initialise
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle/')
@@ -28,6 +27,9 @@ Plugin '907th/vim-auto-save'
 let g:auto_save        = 1
 let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
+
+" Complete-T
+Plugin 'wincent/command-t'
 
 " Echodoc
 Plugin 'Shougo/echodoc.vim'
@@ -84,19 +86,20 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
 
+" Split-Term
+Plugin 'vimlab/split-term.vim'
+
 " Surround
 Plugin 'tpope/vim-surround'
 
-" ncm2  
+" Supertab  
 Plugin 'ervandew/supertab'
-"Plugin 'ncm2/ncm2'
-"Plugin 'roxma/nvim-yarp'
-"Plugin 'ncm2/ncm2-github'
-"Plugin 'ncm2/ncm2-path'
-"Plugin 'ncm2/ncm2-bufword'
 
 " Targets
 Plugin 'wellle/targets.vim'
+
+" vimcmdline
+Plugin 'jalvesaq/vimcmdline'
 
 " Vim Lexical
 Plugin 'reedes/vim-lexical'
@@ -106,6 +109,7 @@ Plugin 'rhysd/open-pdf.vim'
 
 " Vim Slime
 Plugin 'jpalardy/vim-slime'
+
 
 " Vimtex
 Plugin 'lervag/vimtex'
@@ -157,7 +161,7 @@ set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
 "set macligatures               " Ligatures 
-set guifont=Fira\ Code:h15      " Font size
+"set guifont=Fira\ Code:h15      " Font size
 set nospell                     " No spelling for all files
 set modeline                    " Set variables specific to files
 set completeopt+=menuone        " Autocomplete
@@ -197,6 +201,25 @@ nnoremap <Leader>Y "+y$
 nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 
+" vimcmdline mappings
+let cmdline_map_start          = '<LocalLeader>s'
+let cmdline_map_send           = '<Space>'
+let cmdline_map_send_and_stay  = '<LocalLeader><Space>'
+let cmdline_map_source_fun     = '<LocalLeader>f'
+let cmdline_map_send_paragraph = '<LocalLeader>p'
+let cmdline_map_send_block     = '<LocalLeader>b'
+let cmdline_map_quit           = '<LocalLeader>q'
+
+" vimcmdline options
+let cmdline_vsplit      = 1      " Split the window vertically
+let cmdline_esc_term    = 1      " Remap <Esc> to :stopinsert in Neovim's terminal
+let cmdline_in_buffer   = 1      " Start the interpreter in a Neovim's terminal
+let cmdline_term_height = 15     " Initial height of interpreter window or pane
+let cmdline_term_width  = 80     " Initial width of interpreter window or pane
+let cmdline_tmp_dir     = '/tmp' " Temporary directory to save files
+let cmdline_outhl       = 1      " Syntax highlight the output
+let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
+
 " Airline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme                      = 'gruvbox'
@@ -230,7 +253,6 @@ let R_term_cmd = 'st -n R'  " command to execute R in my terminal , with window 
 let R_clear_line = 0        " do not clear line before executing a command, sadly does not work with st
 let R_args = ['--no-save']  " call R with the --no-save option
 autocmd VimLeave * if exists("g:SendCmdToR") && string(g:SendCmdToR) != "function('SendCmdToR_fake')" | call RQuit("nosave") | endif     " exit R when you exit Vim
-
 
 " Compile LaTeX
 map <S-b> :VimtexCompile  <CR>
@@ -267,7 +289,7 @@ let g:pandoc#modules#disabled = ["folding"]
 map <Leader>n :setlocal nospell<CR>
  
 " Open terminal on the right
-map <Leader>t :vs +te<CR>
+map <Leader>t :VTerm<CR>
 
 " R
 nmap <Leader>r <Plug>RStart 
@@ -298,8 +320,8 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " Enable NERDTree on startup
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Let NERDTree show hidden files
 let NERDTreeShowHidden=0
