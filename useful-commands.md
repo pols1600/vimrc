@@ -80,6 +80,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Leader> d` close buffer
 * `za` open/close fold
 * `zx` refresh folds
+* `zR` unfold the whole document
 
 ## LaTeX
 
