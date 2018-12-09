@@ -82,7 +82,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `za` open/close fold
 * `zx` refresh folds
 * `zR` unfold the whole document
-* `:!` goes to terminal
+* `:!<command>` runs a terminal command
 
 ## LaTeX
 
