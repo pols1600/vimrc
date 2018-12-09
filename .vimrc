@@ -1,9 +1,3 @@
-" __   _(_)_ __ ___  _ __ ___
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__
-"   \_/ |_|_| |_| |_|_|  \___|
-"
-
 set nocompatible              " Be iMproved, required
 filetype off                  " Required
 
@@ -63,12 +57,6 @@ let b:lion_squeeze_spaces = 1
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-" NERDTree
-Plugin 'scrooloose/nerdtree' 
-
-" NERDTree git
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
@@ -110,7 +98,6 @@ Plugin 'rhysd/open-pdf.vim'
 " Vim Slime
 Plugin 'jpalardy/vim-slime'
 
-
 " Vimtex
 Plugin 'lervag/vimtex'
 
@@ -134,7 +121,7 @@ filetype plugin indent on    " required
 
 " Settings
 set number                      " Show line numbers
-set relativenumber		" Show relative line numbers
+"set relativenumber				" Show relative line numbers
 set showmatch                   " Highlight matching brace
 set spelllang=en_gb             " British English
 autocmd FileType plaintex,tex,latex syntax spell toplevel " spelling
@@ -227,11 +214,6 @@ let g:airline_theme                      = 'gruvbox'
 " Auto-save
 :au InsertLeave <buffer> update
 
-" nc2m config
-"autocmd BufEnter * call ncm2#enable_for_buffer()
-" IMPORTANT: :help Ncm2PopupOpen for more information
-"set completeopt=menuone,noselect
-
 " Map omnicompletion to tab
 function! InsertTabWrapper()
     let col = col('.') - 1
@@ -319,16 +301,6 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
-" Enable NERDTree on startup
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Let NERDTree show hidden files
-let NERDTreeShowHidden=0
-
-" Close NERDTreee with Ctrl+k Ctrl+b
-map <C-k><C-b> :NERDTreeToggle<CR>
-
 " Distraction-free mode with Goyo
 map <Leader>g :Goyo <CR>i<Esc>`^
 
@@ -345,9 +317,6 @@ filetype indent off
 " Clear highlighting by pressing Enter (Return) in normal modemap
 nnoremap <cr> :noh<CR><CR>:<backspace>
 
-" Delete buffer
-map <Leader>d :bd<CR>
- 
 " Yank all text
 map <C-a> :%y+ <CR>
 
