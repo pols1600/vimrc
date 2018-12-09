@@ -34,6 +34,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `G` go to last line
 * `100gg`go to the 100th line
 * `gg` go to the first line
+* `d55gg` delete from current line to line 55
 * `ˆ` jump to the first non-blank character of the line
 * `%` move to matching character (default supported pairs: '()', '{}', '[]' - use :h matchpairs in vim for more info)
 * `˜` switch case
@@ -77,7 +78,6 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-w> l` move focus to the right window (use `h` to move to the right window, `j` below, `k` above)
 * `<Ctrl-w> L` move window to the right (note the capital letters. Use it with `H`, `J` and `K` too)
 * `<Ctrl-w> c` close window
-* `<Leader> d` close buffer
 * `za` open/close fold
 * `zx` refresh folds
 * `zR` unfold the whole document
