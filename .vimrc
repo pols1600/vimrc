@@ -1,3 +1,8 @@
+" __   _(_)_ __ ___  _ __ ___	
+" \ \ / / | '_ ` _ \| '__/ __|	
+"  \ V /| | | | | | | | | (__	
+"   \_/ |_|_| |_| |_|_|  \___|	
+"	
 set nocompatible              " Be iMproved, required
 filetype off                  " Required
 
@@ -16,14 +21,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Ale
+Plugin 'w0rp/ale'
+
 " Auto-save
 Plugin '907th/vim-auto-save'
 let g:auto_save        = 1
 let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
-
-" Complete-T
-Plugin 'wincent/command-t'
 
 " Echodoc
 Plugin 'Shougo/echodoc.vim'
@@ -73,6 +78,12 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
+Plugin 'ncm2/ncm2'
+Plugin 'roxma/nvim-yarp'
+Plugin 'ncm2/ncm2-ultisnips'
+Plugin 'ncm2/ncm2-bufword'
+Plugin 'ncm2/ncm2-tmux'
+Plugin 'ncm2/ncm2-path'
 
 " Split-Term
 Plugin 'vimlab/split-term.vim'
@@ -91,9 +102,6 @@ Plugin 'jalvesaq/vimcmdline'
 
 " Vim Lexical
 Plugin 'reedes/vim-lexical'
-
-" Vim PDF
-Plugin 'rhysd/open-pdf.vim'
 
 " Vim Slime
 Plugin 'jpalardy/vim-slime'
@@ -214,18 +222,6 @@ let g:airline_theme                      = 'gruvbox'
 " Auto-save
 :au InsertLeave <buffer> update
 
-" Map omnicompletion to tab
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-x>\<c-o>"
-    endif
-endfunction
-
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-
 " R commands
 let R_show_args = 0         " show the arguments for functions with autocompletion
 let R_args_in_stline = 0    " do not show arguments in statusline
@@ -235,6 +231,19 @@ let R_term_cmd = 'st -n R'  " command to execute R in my terminal , with window 
 let R_clear_line = 0        " do not clear line before executing a command, sadly does not work with st
 let R_args = ['--no-save']  " call R with the --no-save option
 autocmd VimLeave * if exists("g:SendCmdToR") && string(g:SendCmdToR) != "function('SendCmdToR_fake')" | call RQuit("nosave") | endif     " exit R when you exit Vim
+
+" nc2m
+au User Ncm2Plugin call ncm2#register_source({
+        \ 'name' : 'vimtex',
+        \ 'priority': 9, 
+        \ 'subscope_enable': 1,
+        \ 'complete_length': 1,
+        \ 'scope': ['tex'],
+        \ 'mark': 'tex',
+        \ 'word_pattern': '\w+',
+        \ 'complete_pattern': g:vimtex#re#ncm,
+        \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+        \ })
 
 " Compile LaTeX
 map <S-b> :VimtexCompile  <CR>
