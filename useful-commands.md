@@ -21,6 +21,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `$` go to the end of the line
 * `A` append at end of line
 * `o` insert at new line below
+* `%` go to matching parenthesis or bracket
 * `Ctrl-Shift-B` page up
 * `Ctrl-Shift-F` page down
 * `Ctrl-Y` move view pane up
@@ -81,6 +82,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `za` open/close fold
 * `zx` refresh folds
 * `zR` unfold the whole document
+* `:!` goes to terminal
 
 ## LaTeX
 
