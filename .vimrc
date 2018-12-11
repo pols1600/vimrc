@@ -164,7 +164,6 @@ set completeopt+=menuone        " Autocomplete
 set completeopt+=noselect
 set shortmess+=c                " Shut off completion messages
 set belloff+=ctrlg              " If Vim beeps during completion
-hi SpellBad ctermfg=red
 
 " Gruvbox
 syntax enable
@@ -172,7 +171,7 @@ let g:gruvbox_italic=0
 let g:gruvbox_guisp_fallback="bg"
 colorscheme gruvbox
 set background=dark
-hi SpellBad gui=underline guifg=red
+hi SpellBad cterm=underline,bold ctermfg=red
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
