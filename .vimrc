@@ -62,6 +62,12 @@ let b:lion_squeeze_spaces = 1
 Plugin 'godlygeek/tabular'
 Plugin 'gabrielelana/vim-markdown'
 
+" NERDTree
+Plugin 'scrooloose/nerdtree' 
+
+" NERDTree git
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
@@ -221,6 +227,12 @@ let g:airline_theme                      = 'gruvbox'
 
 " Auto-save
 :au InsertLeave <buffer> update
+
+" Let NERDTree show hidden files
+let NERDTreeShowHidden=0
+
+" Close NERDTreee with Ctrl+k Ctrl+b
+map <C-k><C-b> :NERDTreeToggle<CR>
 
 " R commands
 let R_show_args = 0         " show the arguments for functions with autocompletion
