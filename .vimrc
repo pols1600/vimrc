@@ -60,7 +60,7 @@ let b:lion_squeeze_spaces = 1
 
 " Markdown
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'gabrielelana/vim-markdown'
 
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
@@ -137,6 +137,7 @@ autocmd FileType plaintex,tex,latex,md,markdown,bib,bibtex setlocal spl=en_gb sp
 set visualbell                  " Use visual bell (no beeping)
 set wildmenu                    " Show menu autocomplete options
 set wildmode=longest,list
+set guicursor=i:ver25-iCursor   " Cursor size
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
