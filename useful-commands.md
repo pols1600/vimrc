@@ -22,6 +22,8 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `A` append at end of line
 * `o` insert at new line below
 * `%` go to matching parenthesis or bracket
+* `gj` go to following _displayed_ line
+* `gk` go to previous _displayed_ line
 * `Ctrl-Shift-B` page up
 * `Ctrl-Shift-F` page down
 * `Ctrl-Y` move view pane up
