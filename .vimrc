@@ -53,6 +53,9 @@ Plugin 'morhetz/gruvbox'
 " indentLines
 Plugin 'Yggdroot/indentLine'
 
+" Limelight
+Plugin 'junegunn/limelight.vim'
+
 " Lion
 Plugin 'tommcdo/vim-lion'
 let g:lion_squeeze_spaces = 1
@@ -144,7 +147,7 @@ set visualbell                  " Use visual bell (no beeping)
 set wildmenu                    " Show menu autocomplete options
 set wildmode=longest,list
 set guicursor=i:ver25-iCursor   " Cursor size
-set mouse=a                     " Automatically enable mouse usage
+"set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
 set splitright                  " Always split right
@@ -275,6 +278,16 @@ let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_compiler_latexmk         = {'callback' : 0}
 let g:tex_conceal = ''
 
+" Limelight config
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_default_coefficient = 0.7
+nmap <Leader>l :Limelight!! <CR>i<Esc>`^
+" Goyo integration
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 " Vim-Slime: set up tmux
 let g:slime_target = "tmux"
 
@@ -328,6 +341,10 @@ map <Leader>g :Goyo <CR>i<Esc>`^
 " Screen dimensions for Goyo
 let g:goyo_width  = 100
 let g:goyo_height = 100
+
+" Remap j and k to move across soft lines
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Remove indentation from a file
 map <F3> :setl noai nocin nosi inde= <CR>
