@@ -166,7 +166,7 @@ set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
 "set macligatures               " Ligatures 
-"set guifont=Fira\ Code:h15      " Font size
+"set guifont=Fira\ Code:h15     " Font size
 set nospell                     " No spelling for all files
 set modeline                    " Set variables specific to files
 set completeopt+=menuone        " Autocomplete
@@ -176,11 +176,12 @@ set belloff+=ctrlg              " If Vim beeps during completion
 
 " Gruvbox
 syntax enable
-let g:gruvbox_italic=0
+let g:gruvbox_italic=1
 let g:gruvbox_guisp_fallback="bg"
+let g:gruvbox_undercurl=1
 colorscheme gruvbox
 set background=dark
-hi SpellBad cterm=underline,bold ctermfg=red
+hi SpellBad cterm=underline,bold ctermfg=red 
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
