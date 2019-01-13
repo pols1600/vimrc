@@ -85,7 +85,9 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `zx` refresh folds
 * `zR` unfold the whole document
 * `:!<command>` runs a terminal command
-* `<Leader> l` toggles [Limelight](https://github.com/junegunn/limelight.vim) on and off (custom)
+* `<Leader> l` toggle [Limelight](https://github.com/junegunn/limelight.vim) on and off (custom)
+* `<Leader> s` toggle Pencil on and off (custom). Soft line wrap is set as default.
+* `<Leader> cs` open Thesaurus
 
 ## LaTeX
 
