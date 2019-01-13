@@ -75,6 +75,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 
+" Pencil
+Plugin 'reedes/vim-pencil'
+
 " R
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'gaalcaras/ncm-R'
@@ -105,6 +108,9 @@ Plugin 'ervandew/supertab'
 
 " Targets
 Plugin 'wellle/targets.vim'
+
+" Thesaurus
+Plugin 'ron89/thesaurus_query.vim'
 
 " vimcmdline
 Plugin 'jalvesaq/vimcmdline'
@@ -173,15 +179,15 @@ set completeopt+=menuone        " Autocomplete
 set completeopt+=noselect
 set shortmess+=c                " Shut off completion messages
 set belloff+=ctrlg              " If Vim beeps during completion
+hi SpellBad cterm=underline,bold ctermfg=red 
 
 " Gruvbox
 syntax enable
 let g:gruvbox_italic=1
-let g:gruvbox_guisp_fallback="bg"
 let g:gruvbox_undercurl=1
+let g:gruvbox_guisp_fallback="bg"
 colorscheme gruvbox
 set background=dark
-hi SpellBad cterm=underline,bold ctermfg=red 
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
@@ -285,9 +291,13 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_default_coefficient = 0.7
 nmap <Leader>l :Limelight!! <CR>i<Esc>`^
+
 " Goyo integration
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" Close tab
+nmap <Leader>d :bd <CR>
 
 " Vim-Slime: set up tmux
 let g:slime_target = "tmux"
@@ -301,9 +311,6 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 
 " Disable pandoc folding
 let g:pandoc#modules#disabled = ["folding"]
-
-" Turn off spelling
-map <Leader>n :setlocal nospell<CR>
  
 " Open terminal on the right
 map <Leader>t :VTerm<CR>
@@ -343,9 +350,9 @@ map <Leader>g :Goyo <CR>i<Esc>`^
 let g:goyo_width  = 100
 let g:goyo_height = 100
 
-" Remap j and k to move across soft lines
-nnoremap <expr> j v:count ? 'j' : 'gj'
-nnoremap <expr> k v:count ? 'k' : 'gk'
+" Pencil toggle soft mode
+map <Leader>s :PencilToggle <CR>
+let g:pencil#wrapModeDefault = 'soft'
 
 " Remove indentation from a file
 map <F3> :setl noai nocin nosi inde= <CR>
