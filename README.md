@@ -40,7 +40,7 @@ source ~/.vimrc
 nvim .vimrc +PluginInstall +qall
 ```
 
-* I currently use [gruvbox](https://github.com/morhetz/gruvbox), but if you like molokai, do the following: Ignore the warning and copy the [molokai.vim](https://raw.githubusercontent.com/danilofreire/vimdir/master/.vim/colors/molokai.vim) file to `~/.config/nvim/colors`. Then select the new theme by typing `:colorscheme molokai` on Neovim.
+* I currently use [gruvbox](https://github.com/morhetz/gruvbox), but I have also included some more themes in the `.vimrc` file: [Ayu](https://github.com/ayu-theme/ayu-vim), [Molokai](https://github.com/tomasr/molokai), [Nord](https://github.com/arcticicestudio/nord-vim), and [Palenight](https://github.com/drewtempelmeyer/palenight.vim).
 
 * I'm using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. You can install it with:
 ```
