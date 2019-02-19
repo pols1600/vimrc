@@ -250,6 +250,7 @@ nnoremap <Leader>y "+y
 nnoremap <Leader>Y "+y$
 nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
+nnoremap <C-a> :%y+ <CR>
 
 " vimcmdline mappings
 let cmdline_map_start          = '<LocalLeader>s'
