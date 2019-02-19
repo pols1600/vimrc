@@ -26,12 +26,12 @@ Plugin 'w0rp/ale'
 
 " Auto-save
 Plugin '907th/vim-auto-save'
-let g:auto_save        = 1
-let g:auto_save_silent = 1
-let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
 
 " Ayu theme
 Plugin 'ayu-theme/ayu-vim'
+
+" Dracula theme
+Plugin 'dracula/vim'
 
 " Echodoc
 Plugin 'Shougo/echodoc.vim'
@@ -61,8 +61,6 @@ Plugin 'junegunn/limelight.vim'
 
 " Lion
 Plugin 'tommcdo/vim-lion'
-let g:lion_squeeze_spaces = 1
-let b:lion_squeeze_spaces = 1
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -156,8 +154,9 @@ filetype plugin indent on    " required
 
 " Settings
 set number                      " Show line numbers
-"set relativenumber				" Show relative line numbers
+set relativenumber				" Show relative line numbers
 set showmatch                   " Highlight matching brace
+set autoread                    " Reload files
 set spelllang=en_gb             " British English
 autocmd FileType plaintex,tex,latex syntax spell toplevel " spelling
 autocmd FileType plaintex,tex,latex,md,markdown,bib,bibtex setlocal spl=en_gb spell
@@ -232,6 +231,11 @@ let g:indentLine_setColors = 1
 let g:indentLine_char      = '|'
 let g:indentLine_enabled   = 1
 
+" Auto-save
+let g:auto_save        = 1
+let g:auto_save_silent = 1
+let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
+
 " Mapleader
 let mapleader = ","
 
@@ -274,20 +278,16 @@ let g:airline_theme                      = 'gruvbox'
 :au InsertLeave <buffer> update
 
 " Let NERDTree show hidden files
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden = 0
 
 " Close NERDTreee with Ctrl+k Ctrl+b
 map <C-k><C-b> :NERDTreeToggle<CR>
 
-" R commands
-let R_show_args = 0         " show the arguments for functions with autocompletion
-let R_args_in_stline = 0    " do not show arguments in statusline
-" Close NERDTreee with Ctrl+k Ctrl+b
-map <C-k><C-b> :NERDTreeToggle<CR>
+" Lion
+let g:lion_squeeze_spaces = 1
+let b:lion_squeeze_spaces = 1
 
-" R commands
-let R_show_args = 0         " show the arguments for functions with autocompletion
-let R_args_in_stline = 0    " do not show arguments in statusline
+
 " R commands
 let R_show_args = 0         " show the arguments for functions with autocompletion
 let R_args_in_stline = 0    " do not show arguments in statusline
@@ -356,12 +356,15 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 " Disable pandoc folding
 let g:pandoc#modules#disabled = ["folding"]
 
+" Pandoc syntax conceal
+let g:pandoc#syntax#conceal#use = 0
+
 " Open terminal on the right
 map <Leader>t :VTerm<CR>
 
 " R
 nmap <Leader>r <Plug>RStart 
-nmap <Space> <Plug>RDSendSelection 
+nmap <C><CR> <Plug>RDSendSelection 
 nmap <Space> <Plug>RDSendLine
 nmap <silent> <LocalLeader>dj :call RAction("head")<CR>
 nmap <silent> <LocalLeader>dk :call RAction("tail")<CR>
