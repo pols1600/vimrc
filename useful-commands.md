@@ -113,6 +113,7 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `]s` next wrong word
 * `[s` previous wrong word
 * `<Leader> n` set nospell (custom)
+* `<Leader> wg` toggle writegood (custom)
 
 ## R
 
