@@ -137,6 +137,9 @@ Plugin 'lervag/vimtex'
 " Vimwordy
 Plugin 'reedes/vim-wordy'
 
+" Write good
+Plugin 'davidbeckingsale/writegood.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -288,6 +291,8 @@ map <C-k><C-b> :NERDTreeToggle<CR>
 let g:lion_squeeze_spaces = 1
 let b:lion_squeeze_spaces = 1
 
+" Write good
+noremap <Leader>wg :WritegoodToggle<CR>
 
 " R commands
 let R_show_args = 0         " show the arguments for functions with autocompletion
