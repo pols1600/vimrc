@@ -304,6 +304,9 @@ let R_clear_line = 0        " do not clear line before executing a command, sadl
 let R_args = ['--no-save']  " call R with the --no-save option
 autocmd VimLeave * if exists("g:SendCmdToR") && string(g:SendCmdToR) != "function('SendCmdToR_fake')" | call RQuit("nosave") | endif     " exit R when you exit Vim
 
+" RMarkdown
+noremap <Leader>md :RMarkdown pdf<CR> 
+
 " nc2m
 au User Ncm2Plugin call ncm2#register_source({
         \ 'name' : 'vimtex',
@@ -341,6 +344,15 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_default_coefficient = 0.7
 nmap <Leader>l :Limelight!! <CR>i<Esc>`^
+
+" Select all
+noremap <C>a ggXG<CR>
+
+" Copy to clipboard
+noremap <C>c :w !pbcopy<CR>
+
+" Paste from clipboard
+noremap <C>v :r !pbpaste<CR> 
 
 " Goyo integration
 autocmd! User GoyoEnter Limelight
