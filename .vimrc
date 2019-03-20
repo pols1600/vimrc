@@ -211,7 +211,7 @@ let ayucolor="dark"   " for dark version of theme
 "colorscheme ayu
 
 " Thesaurus
-nnoremap <Leader>cs :ThesaurusQueryReplaceCurrentWord<CR>
+nnoremap <Leader>th :ThesaurusQueryReplaceCurrentWord<CR>
 
 " Palenight
 set background=dark
