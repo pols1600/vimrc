@@ -1,4 +1,4 @@
-" __   _(_)_ __ ___  _ __ ___	
+
 " \ \ / / | '_ ` _ \| '__/ __|	
 "  \ V /| | | | | | | | | (__	
 "   \_/ |_|_| |_| |_|_|  \___|	
@@ -120,7 +120,7 @@ Plugin 'ervandew/supertab'
 Plugin 'wellle/targets.vim'
 
 " Thesaurus
-Plugin 'ron89/thesaurus_query.vim'
+Plugin 'Ron89/thesaurus_query.vim'
 
 " vimcmdline
 Plugin 'jalvesaq/vimcmdline'
@@ -193,7 +193,7 @@ set completeopt+=menuone        " Autocomplete
 set completeopt+=noselect
 set shortmess+=c                " Shut off completion messages
 set belloff+=ctrlg              " If Vim beeps during completion
-hi SpellBad cterm=underline,bold ctermfg=red 
+hi SpellBad cterm=underline,bold ctermfg=red
 
 " Gruvbox
 syntax enable
@@ -209,6 +209,9 @@ set termguicolors     " enable true colors support
 "let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
 "colorscheme ayu
+
+" Thesaurus
+nnoremap <Leader>cs :ThesaurusQueryReplaceCurrentWord<CR>
 
 " Palenight
 set background=dark
@@ -437,3 +440,4 @@ nmap <leader>5 :bfirst<CR>:4bn<CR>
 nmap <C-S-tab> :bprevious<CR>
 nmap <C-tab>   :bnext<CR>
 "" 
+
