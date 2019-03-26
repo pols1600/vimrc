@@ -151,7 +151,7 @@ filetype plugin indent on    " required
 
 " Settings
 set number                      " Show line numbers
-set relativenumber				" Show relative line numbers
+"set relativenumber			      	" Show relative line numbers
 set showmatch                   " Highlight matching brace
 set autoread                    " Reload files
 set spelllang=en_gb             " British English
@@ -161,7 +161,7 @@ set visualbell                  " Use visual bell (no beeping)
 set wildmenu                    " Show menu autocomplete options
 set wildmode=longest,list
 set guicursor=i:ver25-iCursor   " Cursor size
-set mouse=a                     " Automatically enable mouse usage
+"set mouse=a                    " Automatically enable mouse usage
 set mousehide                   " Hide mouse when typing
 set hlsearch                    " Highlight all search results
 set splitright                  " Always split right
@@ -171,9 +171,9 @@ set incsearch                   " Searches for strings incrementally
 set smarttab                    " Enable smart-tabs
 set autowrite                   " Auto-save files
 set autowriteall                " Auto-save all buffers
-set tabstop=4	                " Number of spaces per Tab
+set tabstop=4	                  " Number of spaces per Tab
 set softtabstop=0 noexpandtab   " Tab 
-set shiftwidth=4				" Indent to be a single tab
+set shiftwidth=4			        	" Indent to be a single tab
 set linebreak                   " Break lines
 set undolevels=1000             " Number of undo levels
 set laststatus=2                " Show status bar
