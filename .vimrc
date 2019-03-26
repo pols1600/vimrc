@@ -1,4 +1,4 @@
-
+" __   _(_)_ __ ___  _ __ ___	
 " \ \ / / | '_ ` _ \| '__/ __|	
 "  \ V /| | | | | | | | | (__	
 "   \_/ |_|_| |_| |_|_|  \___|	
@@ -33,9 +33,6 @@ Plugin 'ayu-theme/ayu-vim'
 " Dracula theme
 Plugin 'dracula/vim'
 
-" Echodoc
-Plugin 'Shougo/echodoc.vim'
-
 " Easymotion (<Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
@@ -58,9 +55,6 @@ Plugin 'Yggdroot/indentLine'
 
 " Limelight
 Plugin 'junegunn/limelight.vim'
-
-" Lion
-Plugin 'tommcdo/vim-lion'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -120,7 +114,7 @@ Plugin 'ervandew/supertab'
 Plugin 'wellle/targets.vim'
 
 " Thesaurus
-Plugin 'Ron89/thesaurus_query.vim'
+Plugin 'ron89/thesaurus_query.vim'
 
 " vimcmdline
 Plugin 'jalvesaq/vimcmdline'
@@ -185,15 +179,13 @@ set undolevels=1000             " Number of undo levels
 set laststatus=2                " Show status bar
 set backspace=indent,eol,start  " backspacing over everything in insert mode
 set confirm                     " Y-N-C prompt if closing with unsaved changes
-"set macligatures               " Ligatures 
-"set guifont=Fira\ Code:h15     " Font size
 set nospell                     " No spelling for all files
 set modeline                    " Set variables specific to files
 set completeopt+=menuone        " Autocomplete
 set completeopt+=noselect
 set shortmess+=c                " Shut off completion messages
 set belloff+=ctrlg              " If Vim beeps during completion
-hi SpellBad cterm=underline,bold ctermfg=red
+hi SpellBad cterm=underline,bold ctermfg=red 
 
 " Gruvbox
 syntax enable
@@ -201,17 +193,14 @@ let g:gruvbox_italic=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_guisp_fallback="bg"
 "colorscheme gruvbox
-"set background=dark
+set background=dark
 
 " Ayu
-set termguicolors     " enable true colors support
+set termguicolors      " enable true colors support
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
+let ayucolor="dark"    " for dark version of theme
 "colorscheme ayu
-
-" Thesaurus
-nnoremap <Leader>cs :ThesaurusQueryReplaceCurrentWord<CR>
 
 " Palenight
 set background=dark
@@ -290,10 +279,6 @@ let NERDTreeShowHidden = 0
 " Close NERDTreee with Ctrl+k Ctrl+b
 map <C-k><C-b> :NERDTreeToggle<CR>
 
-" Lion
-let g:lion_squeeze_spaces = 1
-let b:lion_squeeze_spaces = 1
-
 " Write good
 noremap <Leader>wg :WritegoodToggle<CR>
 
@@ -336,9 +321,9 @@ map <S-b><S-c> :VimtexClean  <CR>
 map <S-b><S-t> :VimtexTocOpen <CR>
 
 " Vimtex Config
-let g:vimtex_fold_enabled             = 1
+let g:vimtex_fold_enabled = 1
 let g:vimtex_quickfix_open_on_warning = 0
-let g:vimtex_compiler_latexmk         = {'callback' : 0}
+let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:tex_conceal = ''
 
 " Limelight config
@@ -440,4 +425,3 @@ nmap <leader>5 :bfirst<CR>:4bn<CR>
 nmap <C-S-tab> :bprevious<CR>
 nmap <C-tab>   :bnext<CR>
 "" 
-
