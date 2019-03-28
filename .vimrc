@@ -63,6 +63,9 @@ Plugin 'gabrielelana/vim-markdown'
 " Molokai theme
 Plugin 'tomasr/molokai'
 
+" Multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+
 " NERDTree
 Plugin 'scrooloose/nerdtree' 
 
@@ -151,7 +154,7 @@ filetype plugin indent on    " required
 
 " Settings
 set number                      " Show line numbers
-"set relativenumber			      	" Show relative line numbers
+"set relativenumber			    " Show relative line numbers
 set showmatch                   " Highlight matching brace
 set autoread                    " Reload files
 set spelllang=en_gb             " British English
@@ -171,9 +174,9 @@ set incsearch                   " Searches for strings incrementally
 set smarttab                    " Enable smart-tabs
 set autowrite                   " Auto-save files
 set autowriteall                " Auto-save all buffers
-set tabstop=4	                  " Number of spaces per Tab
+set tabstop=4	                " Number of spaces per Tab
 set softtabstop=0 noexpandtab   " Tab 
-set shiftwidth=4			        	" Indent to be a single tab
+set shiftwidth=4				" Indent to be a single tab
 set linebreak                   " Break lines
 set undolevels=1000             " Number of undo levels
 set laststatus=2                " Show status bar
@@ -405,7 +408,7 @@ let g:goyo_height = 100
 
 " Pencil toggle soft mode
 map <Leader>s :PencilToggle <CR>i<Esc>`^
-let g:pencil#wrapModeDefault = 'soft'
+let g:pencil#wrapModeDefault = 'hard'
 
 " Remove indentation from a file
 map <F3> :setl noai nocin nosi inde= <CR>
