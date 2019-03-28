@@ -63,7 +63,8 @@ Here is a list of commands that I regularly use. Some of them are customised.
 * `<Ctrl-a>` yank all text (custom)
 * `r` replace character
 * `ce` change word
-* `<Ctrl-n>` autocomplete
+* `<Ctrl-n>` autocomplete (insert mode)
+* `<Ctrl-n>` select text for multicursors editing (normal mode)
 * `<F3>` remove indentation from current file (custom)
 * `yyp` duplicate line
 * `fa` jump to the next _a_ in line (use with any letter)
