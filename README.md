@@ -4,7 +4,7 @@ My configuration files and plugins for [Neovim](https://neovim.io/).
 
 ## Set up instructions:
 
-* If you have [homebrew](https://brew.sh/) installed, just type the following line to install Neovim:
+* If you have [homebrew](https://brew.sh/) installed, type the following line to install Neovim:
 ```
 brew install neovim
 ```
@@ -40,7 +40,7 @@ source ~/.vimrc
 nvim .vimrc +PluginInstall +qall
 ```
 
-* I currently use [gruvbox](https://github.com/morhetz/gruvbox), but I have also included some more themes in the `.vimrc` file: [Ayu](https://github.com/ayu-theme/ayu-vim), [Molokai](https://github.com/tomasr/molokai), [Nord](https://github.com/arcticicestudio/nord-vim), and [Palenight](https://github.com/drewtempelmeyer/palenight.vim).
+* I included many themes in the `.vimrc` file, such as [gruvbox](https://github.com/morhetz/gruvbox), [Molokai](https://github.com/tomasr/molokai), [Nord](https://github.com/arcticicestudio/nord-vim), and [Palenight](https://github.com/drewtempelmeyer/palenight.vim). These are my favourites. I have also added the [rainglow](https://github.com/rainglow/vim) plugin, which has 320+ themes for vim.
 
 * I'm using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. You can install it with:
 ```
@@ -48,7 +48,7 @@ brew tap caskroom/fonts
 brew cask install font-fira-code
 ```
 
-And this is how the editor looks like: 
+And this is how the editor looks like with the default configurations: 
 
 ![](https://github.com/danilofreire/vimrc/raw/master/neovim.png)
 
