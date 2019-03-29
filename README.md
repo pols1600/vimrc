@@ -1,4 +1,4 @@
-# Vim directory
+# (Neo)vim Directory
 
 My configuration files and plugins for [Neovim](https://neovim.io/). 
 
