@@ -4,12 +4,12 @@ My configuration files and plugins for [Neovim](https://neovim.io/).
 
 ## Set up instructions:
 
-* If you have [homebrew](https://brew.sh/) installed, type the following line to install Neovim:
+* Install the latest version of neovim with [homebrew](https://brew.sh/):
 ```
 brew install neovim
 ```
 
-I recommend you to download [iterm2](https://www.iterm2.com/) and [tmux](https://github.com/tmux/tmux) too:
+I recommend you to install [iterm2](https://www.iterm2.com/) and [tmux](https://github.com/tmux/tmux) too:
 ```
 brew cask install iterm2
 brew install tmux
@@ -34,13 +34,14 @@ set runtimepath^=/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 ```
+... or just copy the `init.vim` file above.
 
 * Open `.vimrc` and type `:PluginInstall`. From the command line:
 ```
 nvim .vimrc +PluginInstall +qall
 ```
 
-* I included many themes in the `.vimrc` file, such as [gruvbox](https://github.com/morhetz/gruvbox), [Molokai](https://github.com/tomasr/molokai), [Nord](https://github.com/arcticicestudio/nord-vim), and [Palenight](https://github.com/drewtempelmeyer/palenight.vim). These are my favourites. I have also added the [rainglow](https://github.com/rainglow/vim) plugin, which has 320+ themes for vim.
+* I included many themes in the `.vimrc` file, such as [gruvbox](https://github.com/morhetz/gruvbox), [Molokai](https://github.com/tomasr/molokai), [Nord](https://github.com/arcticicestudio/nord-vim), [OneDark](https://github.com/joshdick/onedark.vim), and [Palenight](https://github.com/drewtempelmeyer/palenight.vim). They are the ones I like the most. I have also added the [rainglow](https://github.com/rainglow/vim) plugin, which has 320+ themes for vim. Check out the themes [here](https://rainglow.io/preview/) and choose your favourite!
 
 * I'm using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. You can install it with:
 ```
@@ -51,7 +52,5 @@ brew cask install font-fira-code
 And this is how the editor looks like with the default configurations: 
 
 ![](https://github.com/danilofreire/vimrc/raw/master/neovim.png)
-
-I've recently come across [VimR](http://vimr.org/), which is a cool GUI for Neovim. It has some nice features such as HTML and Markdown preview, fuzzy file finder, and multiple windows. You might like it too!
 
 I hope you enjoy using Neovim! :)
