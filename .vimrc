@@ -30,16 +30,10 @@ Plugin '907th/vim-auto-save'
 " Deus theme
 Plugin 'ajmwagar/vim-deus'
 
-" Dracula theme
-"Plugin 'dracula/vim'
-
 " Easymotion (<Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-easymotion.vim'
-
-" Flatenned theme
-Plugin 'romainl/flattened'
 
 " Fugitive
 Plugin 'tpope/vim-fugitive'
@@ -119,9 +113,6 @@ Plugin 'vimlab/split-term.vim'
 " Surround
 Plugin 'tpope/vim-surround'
 
-" Supertab  
-Plugin 'ervandew/supertab'
-
 " Targets
 Plugin 'wellle/targets.vim'
 
@@ -163,7 +154,7 @@ filetype plugin indent on    " required
 
 " Settings
 set number                      " Show line numbers
-"set relativenumber			    " Show relative line numbers
+"set relativenumber			        " Show relative line numbers, off for now
 set showmatch                   " Highlight matching brace
 set autoread                    " Reload files
 set spelllang=en_gb             " British English
@@ -183,7 +174,7 @@ set incsearch                   " Searches for strings incrementally
 set smarttab                    " Enable smart-tabs
 set autowrite                   " Auto-save files
 set autowriteall                " Auto-save all buffers
-set tabstop=4	                " Number of spaces per Tab
+set tabstop=4	                  " Number of spaces per Tab
 set softtabstop=0 noexpandtab   " Tab 
 set shiftwidth=4				" Indent to be a single tab
 set linebreak                   " Break lines
@@ -201,7 +192,7 @@ hi SpellBad cterm=underline,bold ctermfg=red
 syntax enable                   " Syntax highlighting
 
 " Gruvbox theme
-let g:gruvbox_italic=1
+let g:gruvbox_italic=0
 let g:gruvbox_undercurl=1
 let g:gruvbox_guisp_fallback="bg"
 "colorscheme gruvbox
@@ -230,7 +221,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme                      = 'onedark'
 
 " Palenight theme
-let g:palenight_terminal_italics=1
+let g:palenight_terminal_italics=0
 set background=dark
 "colorscheme palenight
 if (has("nvim"))
