@@ -27,9 +27,6 @@ Plugin 'w0rp/ale'
 " Auto-save
 Plugin '907th/vim-auto-save'
 
-" Ayu theme
-Plugin 'ayu-theme/ayu-vim'
-
 " Deus theme
 Plugin 'ajmwagar/vim-deus'
 
@@ -201,37 +198,51 @@ set completeopt+=noselect
 set shortmess+=c                " Shut off completion messages
 set belloff+=ctrlg              " If Vim beeps during completion
 hi SpellBad cterm=underline,bold ctermfg=red 
+syntax enable                   " Syntax highlighting
 
-" Gruvbox
-syntax enable
+" Gruvbox theme
 let g:gruvbox_italic=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_guisp_fallback="bg"
 "colorscheme gruvbox
 set background=dark
 
-" Ayu
-set termguicolors      " enable true colors support
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"    " for dark version of theme
-"colorscheme ayu
+" OneDark theme
+colorscheme onedark
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 
-" Palenight
+" Airline configuration
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme                      = 'onedark'
+
+" Palenight theme
+let g:palenight_terminal_italics=1
 set background=dark
 "colorscheme palenight
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
-
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
 " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
 if (has("termguicolors"))
   set termguicolors
 endif
-let g:palenight_terminal_italics=1
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
@@ -280,28 +291,6 @@ let cmdline_term_width  = 80     " Initial width of interpreter window or pane
 let cmdline_tmp_dir     = '/tmp' " Temporary directory to save files
 let cmdline_outhl       = 1      " Syntax highlight the output
 let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
-
-" OneDark theme
-colorscheme onedark
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
-" Airline configuration
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme                      = 'onedark'
 
 " Auto-save
 :au InsertLeave <buffer> update
