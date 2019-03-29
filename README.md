@@ -34,7 +34,7 @@ set runtimepath^=/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 ```
-... or just copy the `init.vim` file above.
+... or just copy the [`init.vim`](https://raw.githubusercontent.com/danilofreire/vimrc/master/init.vim) file above.
 
 * Open `.vimrc` and type `:PluginInstall`. From the command line:
 ```
