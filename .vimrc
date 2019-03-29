@@ -30,13 +30,22 @@ Plugin '907th/vim-auto-save'
 " Ayu theme
 Plugin 'ayu-theme/ayu-vim'
 
+" Deus theme
+Plugin 'ajmwagar/vim-deus'
+
 " Dracula theme
-Plugin 'dracula/vim'
+"Plugin 'dracula/vim'
 
 " Easymotion (<Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-easymotion.vim'
+
+" Flatenned theme
+Plugin 'romainl/flattened'
+
+" Fugitive
+Plugin 'tpope/vim-fugitive'
 
 " GitGutter
 Plugin 'airblade/vim-gitgutter'
@@ -44,10 +53,7 @@ Plugin 'airblade/vim-gitgutter'
 " Goyo 
 Plugin 'junegunn/goyo.vim'
 
-" GitHub 
-Plugin 'tpope/vim-fugitive'
-
-" Gruvbox
+" Gruvbox theme
 Plugin 'morhetz/gruvbox'
 
 " indentLines
@@ -75,6 +81,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Nord theme
 Plugin 'arcticicestudio/nord-vim'
 
+" OneDark theme
+Plugin 'joshdick/onedark.vim'
+
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
@@ -88,6 +97,9 @@ Plugin 'reedes/vim-pencil'
 " R
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'gaalcaras/ncm-R'
+
+" Rainglow themes (320+)
+Plugin 'rainglow/vim'
 
 " RMarkdown
 Plugin 'vim-pandoc/vim-rmarkdown'
@@ -207,7 +219,7 @@ let ayucolor="dark"    " for dark version of theme
 
 " Palenight
 set background=dark
-colorscheme palenight
+"colorscheme palenight
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -269,9 +281,27 @@ let cmdline_tmp_dir     = '/tmp' " Temporary directory to save files
 let cmdline_outhl       = 1      " Syntax highlight the output
 let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
 
+" OneDark theme
+colorscheme onedark
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 " Airline configuration
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme                      = 'gruvbox'
+let g:airline_theme                      = 'onedark'
 
 " Auto-save
 :au InsertLeave <buffer> update
