@@ -1,6 +1,6 @@
 # (Neo)vim Directory
 
-My configuration files and plugins for [Neovim](https://neovim.io/). 
+My configuration files and plugins for [Neovim](https://neovim.io/). They work fine with regular [vim](http://vim.org) too.
 
 ## Set up instructions:
 
