@@ -43,11 +43,12 @@ nvim .vimrc +PluginInstall +qall
 
 * I included many themes in the `.vimrc` file, such as [gruvbox](https://github.com/morhetz/gruvbox), [Molokai](https://github.com/tomasr/molokai), [Nord](https://github.com/arcticicestudio/nord-vim), [OneDark](https://github.com/joshdick/onedark.vim), and [Palenight](https://github.com/drewtempelmeyer/palenight.vim). They are the ones I like the most. I have also added the [rainglow](https://github.com/rainglow/vim) plugin, which has 320+ themes for vim. Check out the themes [here](https://rainglow.io/preview/) and choose your favourite!
 
-* I'm using [Fira Code Regular](https://github.com/tonsky/FiraCode) as my main font. You can install it with:
+* If you want to make your [vim-airline toolbar](https://github.com/vim-airline/vim-airline) look nice, please download the [powerline patched fonts](https://github.com/powerline/fonts):
 ```
-brew tap caskroom/fonts
-brew cask install font-fira-code
+git clone git@github.com:powerline/fonts.git
 ```
+
+Then install the font you prefer and configure your terminal to use it. I use [`FiraMono`](https://github.com/powerline/fonts/tree/master/FiraMono).   
 
 And this is how the editor looks like with the default configurations: 
 

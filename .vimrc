@@ -27,9 +27,6 @@ Plugin 'w0rp/ale'
 " Auto-save
 Plugin '907th/vim-auto-save'
 
-" Deus theme
-Plugin 'ajmwagar/vim-deus'
-
 " Easymotion (<Leader>-w or -f to toggle)
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
@@ -106,9 +103,6 @@ Plugin 'ncm2/ncm2-ultisnips'
 Plugin 'ncm2/ncm2-bufword'
 Plugin 'ncm2/ncm2-tmux'
 Plugin 'ncm2/ncm2-path'
-
-" Split-Term
-Plugin 'vimlab/split-term.vim'
 
 " Surround
 Plugin 'tpope/vim-surround'
@@ -194,12 +188,27 @@ syntax enable                   " Syntax highlighting
 " Gruvbox theme
 let g:gruvbox_italic=0
 let g:gruvbox_undercurl=1
+let g:gruvbox_contrast_dark="soft"
 let g:gruvbox_guisp_fallback="bg"
 "colorscheme gruvbox
+
+" Palenight theme
+let g:palenight_terminal_italics=0
 set background=dark
+"colorscheme palenight
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " OneDark theme
-colorscheme onedark
+"colorscheme onedark
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -216,24 +225,17 @@ if (empty($TMUX))
   endif
 endif
 
-" Airline configuration
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme                      = 'onedark'
+"Nord theme
+let g:nord_underline = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_uniform_diff_background = 1
+let g:nord_cursor_line_number_background = 1
+colorscheme nord
 
-" Palenight theme
-let g:palenight_terminal_italics=0
-set background=dark
-"colorscheme palenight
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-  set termguicolors
-endif
+" Airline configuration
+let g:airline_powerline_fonts 			 = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme                      = 'base16_nord'
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
