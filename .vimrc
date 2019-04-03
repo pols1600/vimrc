@@ -148,7 +148,7 @@ filetype plugin indent on    " required
 
 " Settings
 set number                      " Show line numbers
-"set relativenumber			        " Show relative line numbers, off for now
+"set relativenumber			    " Show relative line numbers, off for now
 set showmatch                   " Highlight matching brace
 set autoread                    " Reload files
 set spelllang=en_gb             " British English
@@ -195,7 +195,7 @@ let g:gruvbox_guisp_fallback="bg"
 " Palenight theme
 let g:palenight_terminal_italics=0
 set background=dark
-"colorscheme palenight
+colorscheme palenight
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -230,12 +230,12 @@ let g:nord_underline = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
-colorscheme nord
+"colorscheme nord
 
 " Airline configuration
 let g:airline_powerline_fonts 			 = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme                      = 'base16_nord'
+let g:airline_theme                      = 'onedark'
 
 " Set nospell
 map <leader>n :setlocal nospell <CR>
@@ -381,7 +381,10 @@ let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#conceal#use = 0
 
 " Open terminal on the right
-map <Leader>t :VTerm<CR>
+map <Leader>t :vs+te<CR>
+
+" Map ESC to leave terminal
+:tnoremap <Esc> <C-\><C-n>
 
 " R
 nmap <Leader>r <Plug>RStart 
