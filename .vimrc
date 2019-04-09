@@ -266,6 +266,13 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 nnoremap <C-a> :%y+ <CR>
 
+" Disable arrow keys
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 " vimcmdline mappings
 let cmdline_map_start          = '<LocalLeader>s'
 let cmdline_map_send           = '<Space>'
