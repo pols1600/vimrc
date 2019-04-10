@@ -41,6 +41,20 @@ source ~/.vimrc
 nvim .vimrc +PluginInstall +qall
 ```
 
+* Please note that I have disable the arrow keys and the mouse to force me to use vim's own shortcuts. The arrow keys function normally when in insert mode. If you would like to revert these changes, please uncomment (remove the `"` symbol) the following line:
+```
+set mouse=a 
+```
+
+Also, delete these lines to activate the arrow keys:
+```
+" Deactivate arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+```
+
 * I included many themes in the `.vimrc` file, such as [gruvbox](https://github.com/morhetz/gruvbox), [Molokai](https://github.com/tomasr/molokai), [Nord](https://github.com/arcticicestudio/nord-vim), [OneDark](https://github.com/joshdick/onedark.vim), and [Palenight](https://github.com/drewtempelmeyer/palenight.vim). They are the ones I like the most. I have also added the [rainglow](https://github.com/rainglow/vim) plugin, which has 320+ themes for vim. Check out the themes [here](https://rainglow.io/preview/) and choose your favourite!
 
 * If you want to make your [vim-airline toolbar](https://github.com/vim-airline/vim-airline) look nice, please download the [powerline patched fonts](https://github.com/powerline/fonts):
