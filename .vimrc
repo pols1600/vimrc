@@ -266,7 +266,7 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 nnoremap <C-a> :%y+ <CR>
 
-" Deactivate arrows
+" Deactivate arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
