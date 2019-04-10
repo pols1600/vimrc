@@ -83,8 +83,8 @@ Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'reedes/vim-pencil'
 
 " R
-Plugin 'jalvesaq/Nvim-R'
-Plugin 'gaalcaras/ncm-R'
+"Plugin 'jalvesaq/Nvim-R'
+"Plugin 'gaalcaras/ncm-R'
 
 " Rainglow themes (320+)
 Plugin 'rainglow/vim'
@@ -266,8 +266,7 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 nnoremap <C-a> :%y+ <CR>
 
-" Disable arrow keys
-
+" Deactivate arrows
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -305,14 +304,14 @@ map <C-k><C-b> :NERDTreeToggle<CR>
 noremap <Leader>wg :WritegoodToggle<CR>
 
 " R commands
-let R_show_args = 0         " show the arguments for functions with autocompletion
-let R_args_in_stline = 0    " do not show arguments in statusline
-let R_assign = 0            " do not convert _ into <-, annoying!
-let R_insert_mode_cmds = 1  " allow R commands in insert mode
-let R_term_cmd = 'st -n R'  " command to execute R in my terminal , with window name R
-let R_clear_line = 0        " do not clear line before executing a command, sadly does not work with st
-let R_args = ['--no-save']  " call R with the --no-save option
-autocmd VimLeave * if exists("g:SendCmdToR") && string(g:SendCmdToR) != "function('SendCmdToR_fake')" | call RQuit("nosave") | endif     " exit R when you exit Vim
+"let R_show_args = 0         " show the arguments for functions with autocompletion
+"let R_args_in_stline = 0    " do not show arguments in statusline
+"let R_assign = 0            " do not convert _ into <-, annoying!
+"let R_insert_mode_cmds = 1  " allow R commands in insert mode
+"let R_term_cmd = 'st -n R'  " command to execute R in my terminal , with window name R
+"let R_clear_line = 0        " do not clear line before executing a command, sadly does not work with st
+"let R_args = ['--no-save']  " call R with the --no-save option
+"autocmd VimLeave * if exists("g:SendCmdToR") && string(g:SendCmdToR) != "function('SendCmdToR_fake')" | call RQuit("nosave") | endif     " exit R when you exit Vim
 
 " RMarkdown
 noremap <Leader>md :RMarkdown pdf<CR> 
@@ -382,7 +381,7 @@ let g:pandoc#filetypes#handled         = ["pandoc", "markdown"]
 let g:pandoc#filetypes#pandoc_markdown = 0
 
 " Disable pandoc folding
-let g:pandoc#modules#disabled = ["folding"]
+"let g:pandoc#modules#disabled = ["folding"]
 
 " Pandoc syntax conceal
 let g:pandoc#syntax#conceal#use = 0
@@ -394,19 +393,19 @@ map <Leader>t :vs+te<CR>
 :tnoremap <Esc> <C-\><C-n>
 
 " R
-nmap <Leader>r <Plug>RStart 
-nmap <C><CR> <Plug>RDSendSelection 
-nmap <Space> <Plug>RDSendLine
-nmap <silent> <LocalLeader>dj :call RAction("head")<CR>
-nmap <silent> <LocalLeader>dk :call RAction("tail")<CR>
-nmap <silent> <LocalLeader>dl :call RAction("levels")<CR>
-nmap <silent> <LocalLeader>ds :call RAction("summary")<CR>
-let R_nvimpager = "vertical"
-let R_rconsole_height = 25  
-let R_args_in_stline = 1
-let r_syntax_folding = 1
-autocmd filetype r inoremap $ $<C-X><C-O>
-autocmd filetype rmd inoremap @ @<C-X><C-O>
+"nmap <Leader>r <Plug>RStart 
+"nmap <C><CR> <Plug>RDSendSelection 
+"nmap <Space> <Plug>RDSendLine
+"nmap <silent> <LocalLeader>dj :call RAction("head")<CR>
+"nmap <silent> <LocalLeader>dk :call RAction("tail")<CR>
+"nmap <silent> <LocalLeader>dl :call RAction("levels")<CR>
+"nmap <silent> <LocalLeader>ds :call RAction("summary")<CR>
+"let R_nvimpager = "vertical"
+"let R_rconsole_height = 25  
+"let R_args_in_stline = 1
+"let r_syntax_folding = 1
+"autocmd filetype r inoremap $ $<C-X><C-O>
+"autocmd filetype rmd inoremap @ @<C-X><C-O>
 
 " Some shortcuts for easymotion:
 " <Leader>f{char} to move to {char}{char}
